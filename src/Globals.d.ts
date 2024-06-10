@@ -1,4 +1,19 @@
 declare module "*.module.css" {
   const styles: Record<string, string>;
-  export default styles;
+  export = styles;
+}
+
+declare module "*.jpg?as=webp" {
+  const content: string;
+  export default content;
+}
+
+declare module "*.png?as=webp" {
+  const content: string;
+  export default content;
+}
+
+declare module "*.svg?as=webp" {
+  const content: string;
+  export default content;
 }
