@@ -10,8 +10,18 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import SearchIcon from "@mui/icons-material/Search";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import React from "react";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import Stack from "@mui/material/Stack";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemIcon from "@mui/material/ListItemIcon";
+
+import logoIcon from "../assets/logoIcon.png?as=webp";
+import logoText from "../assets/logoText.png?as=webp";
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -36,6 +46,33 @@ export default function Navbar() {
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const menuItems = [
+    {
+      text: "Outdoor",
+      icon: <ExpandMoreIcon />,
+    },
+    {
+      text: "Living",
+      icon: <ExpandMoreIcon />,
+    },
+    {
+      text: "Dining",
+      icon: <ExpandMoreIcon />,
+    },
+    {
+      text: "Bedroom",
+      icon: <ExpandMoreIcon />,
+    },
+    {
+      text: "Office",
+      icon: <ExpandMoreIcon />,
+    },
+    {
+      text: "Bathroom",
+      icon: <ExpandMoreIcon />,
+    },
+  ];
 
   const menuId = "primary-search-account-menu";
   const renderMenu = (
@@ -107,17 +144,38 @@ export default function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" sx={{ boxShadow: "none" }}>
         <Toolbar sx={{ height: "90px", backgroundColor: "white", color: "darkcyan" }}>
-          <Box sx={{ fontSize: "50px", fontFamily: '"Titillium Web", sans-serif', fontWeight: 400, fontStyle: "normal", ml: "60px" }}>
-            LOXAVI
+          {/* logo */}
+          <Box>
+            <motion.img
+              src={logoIcon}
+              style={{ width: "60px", marginRight: "20px" }}
+              drag
+              dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
+              dragElastic={0.015}
+            />
+            <motion.img src={logoText} style={{ width: "190px" }} />
           </Box>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { md: "flex", xs: "none" } }}>
-            <IconButton aria-label="search" color="inherit" size="large">
+
+          {/* list / links */}
+          <Box sx={{ m: "0 auto", width: "50%", display: { xs: "none", xl: "flex" } }}>
+            <List component={Stack} direction="row">
+              {menuItems.map((item) => (
+                <ListItem key={item.text}>
+                  <ListItemText primary={item.text}></ListItemText>
+                  <ListItemIcon>{item.icon}</ListItemIcon>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+
+          {/* icons */}
+          <Box sx={{ display: { md: "flex", xs: "none" }, float: "right" }}>
+            <IconButton aria-label="search" color="inherit" size="large" disableRipple>
               <SearchIcon sx={{ fontSize: "30px" }} />
             </IconButton>
-            <IconButton aria-label="shopping badge" color="inherit">
+            <IconButton aria-label="shopping badge" color="inherit" disableRipple>
               <ShoppingBagIcon sx={{ fontSize: "30px" }} />
             </IconButton>
             <IconButton
@@ -128,6 +186,7 @@ export default function Navbar() {
               edge="end"
               onClick={handleProfileMenuOpen}
               size="large"
+              disableRipple
             >
               <PersonIcon sx={{ fontSize: "30px" }} />
             </IconButton>
@@ -140,6 +199,7 @@ export default function Navbar() {
               color="inherit"
               onClick={handleMobileMenuOpen}
               size="large"
+              disableRipple
             >
               <MoreIcon />
             </IconButton>
