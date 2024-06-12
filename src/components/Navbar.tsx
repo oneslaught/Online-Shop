@@ -1,29 +1,32 @@
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import PersonIcon from "@mui/icons-material/Person";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import AppBar from "@mui/material/AppBar";
+import PersonIcon from "@mui/icons-material/Person";
+import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import AppBar from "@mui/material/AppBar";
 import Badge from "@mui/material/Badge";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Toolbar from "@mui/material/Toolbar";
-import SearchIcon from "@mui/icons-material/Search";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import React from "react";
-import { useState } from "react";
-import { motion } from "framer-motion";
-import Stack from "@mui/material/Stack";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Stack from "@mui/material/Stack";
+import Toolbar from "@mui/material/Toolbar";
+import { motion } from "framer-motion";
+import React from "react";
+import { useState } from "react";
 
+import DisableDrag from "../DisableDrag";
 import logoIcon from "../assets/logoIcon.png?as=webp";
 import logoText from "../assets/logoText.png?as=webp";
 
 export default function Navbar() {
+  const dragRef = DisableDrag<HTMLDivElement>();
+
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<HTMLElement | null>(null);
 
@@ -49,28 +52,28 @@ export default function Navbar() {
 
   const menuItems = [
     {
+      icon: <ExpandMoreIcon />,
       text: "Outdoor",
-      icon: <ExpandMoreIcon />,
     },
     {
+      icon: <ExpandMoreIcon />,
       text: "Living",
-      icon: <ExpandMoreIcon />,
     },
     {
+      icon: <ExpandMoreIcon />,
       text: "Dining",
-      icon: <ExpandMoreIcon />,
     },
     {
+      icon: <ExpandMoreIcon />,
       text: "Bedroom",
-      icon: <ExpandMoreIcon />,
     },
     {
+      icon: <ExpandMoreIcon />,
       text: "Office",
-      icon: <ExpandMoreIcon />,
     },
     {
-      text: "Bathroom",
       icon: <ExpandMoreIcon />,
+      text: "Bathroom",
     },
   ];
 
@@ -143,23 +146,35 @@ export default function Navbar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box ref={dragRef} sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ boxShadow: "none" }}>
-        <Toolbar sx={{ height: "90px", backgroundColor: "white", color: "darkcyan" }}>
+        <Toolbar sx={{ backgroundColor: "white", color: "darkcyan", height: "90px" }}>
           {/* logo */}
           <Box>
             <motion.img
-              src={logoIcon}
-              style={{ width: "60px", marginRight: "20px" }}
+              animate={{ opacity: 1, scale: 1 }}
               drag
-              dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
+              dragConstraints={{ bottom: 0, left: 0, right: 0, top: 0 }}
               dragElastic={0.015}
+              initial={{ opacity: 0, scale: 0.4 }}
+              src={logoIcon}
+              style={{ marginRight: "20px", width: "60px" }}
+              transition={{
+                duration: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+                scale: {
+                  damping: 5,
+                  restDelta: 0.001,
+                  stiffness: 100,
+                  type: "spring",
+                },
+              }}
             />
             <motion.img src={logoText} style={{ width: "190px" }} />
           </Box>
 
           {/* list / links */}
-          <Box sx={{ m: "0 auto", width: "50%", display: { xs: "none", xl: "flex" } }}>
+          <Box sx={{ display: { xl: "flex", xs: "none" }, m: "0 auto", width: "50%" }}>
             <List component={Stack} direction="row">
               {menuItems.map((item) => (
                 <ListItem key={item.text}>
@@ -172,7 +187,7 @@ export default function Navbar() {
 
           {/* icons */}
           <Box sx={{ display: { md: "flex", xs: "none" }, float: "right" }}>
-            <IconButton aria-label="search" color="inherit" size="large" disableRipple>
+            <IconButton aria-label="search" color="inherit" disableRipple size="large">
               <SearchIcon sx={{ fontSize: "30px" }} />
             </IconButton>
             <IconButton aria-label="shopping badge" color="inherit" disableRipple>
@@ -183,10 +198,10 @@ export default function Navbar() {
               aria-haspopup="true"
               aria-label="account of current user"
               color="inherit"
+              disableRipple
               edge="end"
               onClick={handleProfileMenuOpen}
               size="large"
-              disableRipple
             >
               <PersonIcon sx={{ fontSize: "30px" }} />
             </IconButton>
@@ -197,9 +212,9 @@ export default function Navbar() {
               aria-haspopup="true"
               aria-label="show more"
               color="inherit"
+              disableRipple
               onClick={handleMobileMenuOpen}
               size="large"
-              disableRipple
             >
               <MoreIcon />
             </IconButton>

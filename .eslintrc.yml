@@ -10,7 +10,7 @@ extends:
   - plugin:@typescript-eslint/stylistic-type-checked
   - plugin:prettier/recommended
   - plugin:deprecation/recommended
-  # - plugin:perfectionist/recommended-natural
+  - plugin:perfectionist/recommended-natural
 plugins:
   - unused-imports
 rules:

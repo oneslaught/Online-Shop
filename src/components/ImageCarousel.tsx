@@ -1,5 +1,5 @@
-import Carousel from "react-bootstrap/Carousel";
 import React from "react";
+import Carousel from "react-bootstrap/Carousel";
 
 import img1 from "../assets/first.jpg?as=webp";
 import img2 from "../assets/second.jpg?as=webp";
@@ -9,14 +9,14 @@ export default function ControlledCarousel() {
   return (
     <Carousel>
       <Carousel.Item>
-        <img style={{ height: "100vh" }} className="d-block w-100" src={img1} alt="First slide" />
+        <img alt="First slide" className="d-block w-100" src={img1} style={{ height: "100vh" }} />
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img style={{ height: "100vh" }} className="d-block w-100" src={img2} alt="Second slide" />
+        <img alt="Second slide" className="d-block w-100" src={img2} style={{ height: "100vh" }} />
 
         <Carousel.Caption>
           <h3>Second slide label</h3>
@@ -24,7 +24,7 @@ export default function ControlledCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img style={{ height: "100vh" }} className="d-block w-100" src={img3} alt="Third slide" />
+        <img alt="Third slide" className="d-block w-100" src={img3} style={{ height: "100vh" }} />
 
         <Carousel.Caption>
           <h3>Third slide label</h3>
