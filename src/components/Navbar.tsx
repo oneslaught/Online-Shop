@@ -20,12 +20,12 @@ import { motion } from "framer-motion";
 import React from "react";
 import { useState } from "react";
 
-import DisableDrag from "../DisableDrag";
+import DisableDefaultDrag from "../DisableDefaultDrag";
 import logoIcon from "../assets/logoIcon.png?as=webp";
 import logoText from "../assets/logoText.png?as=webp";
 
 export default function Navbar() {
-  const dragRef = DisableDrag<HTMLDivElement>();
+  const dragRef = DisableDefaultDrag<HTMLDivElement>();
 
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<HTMLElement | null>(null);
@@ -148,7 +148,7 @@ export default function Navbar() {
   return (
     <Box ref={dragRef} sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{ boxShadow: "none" }}>
-        <Toolbar sx={{ backgroundColor: "white", color: "darkcyan", height: "90px" }}>
+        <Toolbar sx={{ backgroundColor: "white", color: "#3E4143", height: "90px" }}>
           {/* logo */}
           <Box>
             <motion.img
@@ -177,8 +177,20 @@ export default function Navbar() {
           <Box sx={{ display: { xl: "flex", xs: "none" }, m: "0 auto", width: "50%" }}>
             <List component={Stack} direction="row">
               {menuItems.map((item) => (
-                <ListItem key={item.text}>
-                  <ListItemText primary={item.text}></ListItemText>
+                <ListItem
+                  key={item.text}
+                  sx={{
+                    "&:hover": {
+                      "& .MuiListItemIcon-root": {
+                        color: "inherit",
+                      },
+                      color: "darkcyan",
+                    },
+                    cursor: "pointer",
+                    transition: "color 200ms",
+                  }}
+                >
+                  <ListItemText primary={item.text} />
                   <ListItemIcon>{item.icon}</ListItemIcon>
                 </ListItem>
               ))}
@@ -187,11 +199,42 @@ export default function Navbar() {
 
           {/* icons */}
           <Box sx={{ display: { md: "flex", xs: "none" }, float: "right" }}>
-            <IconButton aria-label="search" color="inherit" disableRipple size="large">
-              <SearchIcon sx={{ fontSize: "30px" }} />
-            </IconButton>
+            <Box>
+              <IconButton aria-label="search" color="inherit" disableRipple size="large">
+                <SearchIcon
+                  sx={{
+                    "&:hover": {
+                      color: "darkcyan",
+                    },
+                    fontSize: "30px",
+                    m: "0 14px",
+                    transition: "color 200ms",
+                  }}
+                />
+                <Box
+                  component="span"
+                  sx={{
+                    "&:hover": {
+                      color: "darkcyan",
+                    },
+                    fontSize: "16px",
+                    transition: "color 200ms",
+                  }}
+                >
+                  Search
+                </Box>
+              </IconButton>
+            </Box>
             <IconButton aria-label="shopping badge" color="inherit" disableRipple>
-              <ShoppingBagIcon sx={{ fontSize: "30px" }} />
+              <ShoppingBagIcon
+                sx={{
+                  "&:hover": {
+                    color: "darkcyan",
+                  },
+                  fontSize: "30px",
+                  transition: "color 200ms",
+                }}
+              />
             </IconButton>
             <IconButton
               aria-controls={menuId}
@@ -203,7 +246,15 @@ export default function Navbar() {
               onClick={handleProfileMenuOpen}
               size="large"
             >
-              <PersonIcon sx={{ fontSize: "30px" }} />
+              <PersonIcon
+                sx={{
+                  "&:hover": {
+                    color: "darkcyan",
+                  },
+                  fontSize: "30px",
+                  transition: "color 200ms",
+                }}
+              />
             </IconButton>
           </Box>
           <Box sx={{ display: { md: "none", xs: "flex" } }}>
@@ -216,7 +267,14 @@ export default function Navbar() {
               onClick={handleMobileMenuOpen}
               size="large"
             >
-              <MoreIcon />
+              <MoreIcon
+                sx={{
+                  "&:hover": {
+                    color: "darkcyan",
+                  },
+                  transition: "color 200ms",
+                }}
+              />
             </IconButton>
           </Box>
         </Toolbar>
