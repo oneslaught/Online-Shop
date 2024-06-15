@@ -9,14 +9,14 @@ export default function ControlledCarousel() {
   return (
     <Carousel>
       <Carousel.Item>
-        <img alt="First slide" className="d-block w-100" src={img1} style={{ height: "100vh" }} />
+        <img alt="First slide" className="d-block w-100" src={img1} style={{ height: "90vh" }} />
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img alt="Second slide" className="d-block w-100" src={img2} style={{ height: "100vh" }} />
+        <img alt="Second slide" className="d-block w-100" src={img2} style={{ height: "90vh" }} />
 
         <Carousel.Caption>
           <h3>Second slide label</h3>
@@ -24,7 +24,7 @@ export default function ControlledCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img alt="Third slide" className="d-block w-100" src={img3} style={{ height: "100vh" }} />
+        <img alt="Third slide" className="d-block w-100" src={img3} style={{ height: "90vh" }} />
 
         <Carousel.Caption>
           <h3>Third slide label</h3>

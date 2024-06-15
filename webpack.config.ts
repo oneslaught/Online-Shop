@@ -60,23 +60,23 @@ const webpackConfig: Configuration = {
   optimization: {
     minimizer: [
       new ImageMinimizerPlugin({
+        generator: [
+          {
+            implementation: ImageMinimizerPlugin.imageminGenerate,
+            options: {
+              plugins: ["imagemin-webp"],
+            },
+            preset: "webp",
+          },
+        ],
+        // Disable `loader`
+        loader: true,
         minimizer: {
           implementation: ImageMinimizerPlugin.imageminMinify,
           options: {
             plugins: ["imagemin-gifsicle", "imagemin-mozjpeg", "imagemin-pngquant"],
           },
         },
-        generator: [
-          {
-            implementation: ImageMinimizerPlugin.imageminGenerate,
-            preset: "webp",
-            options: {
-              plugins: ["imagemin-webp"],
-            },
-          },
-        ],
-        // Disable `loader`
-        loader: true,
       }),
     ],
     sideEffects: false,

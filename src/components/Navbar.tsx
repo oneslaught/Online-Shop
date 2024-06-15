@@ -190,7 +190,7 @@ export default function Navbar() {
                     transition: "color 200ms",
                   }}
                 >
-                  <ListItemText primary={item.text} />
+                  <ListItemText primary={item.text} primaryTypographyProps={{ sx: { fontFamily: '"Lato", sans-serif' } }} />
                   <ListItemIcon>{item.icon}</ListItemIcon>
                 </ListItem>
               ))}
