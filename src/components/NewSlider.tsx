@@ -10,11 +10,11 @@ import Office from "../assets/office.jpeg?as=webp";
 import Outdoor from "../assets/outdoor.jpg?as=webp";
 import * as styles from "../styles/new_slider.module.css";
 
-interface Slide {
+type Slide = {
   description: string;
   image: string;
   name: string;
-}
+};
 
 const slidesData: Slide[] = [
   { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Outdoor, name: "Outdoor" },
@@ -46,8 +46,8 @@ export default function NewSlider() {
     <>
       <div className={styles.container}>
         <div className={styles.slide}>
-          {slides.map((slide, index) => (
-            <div className={styles.item} key={index} style={{ backgroundImage: `url(${slide.image})` }}>
+          {slides.map((slide) => (
+            <div className={styles.item} key={slide.name} style={{ backgroundImage: `url(${slide.image})` }}>
               <div className={styles.content}>
                 <div className={styles.name}>{slide.name}</div>
                 <div className={styles.des}>{slide.description}</div>
@@ -56,14 +56,14 @@ export default function NewSlider() {
             </div>
           ))}
         </div>
-      </div>
-      <div className={styles.button}>
-        <button className={styles.prev} onClick={handlePrev}>
-          <ArrowBackIcon />
-        </button>
-        <button className={styles.next} onClick={handleNext}>
-          <ArrowForwardIcon />
-        </button>
+        <div className={styles.button}>
+          <button onClick={handlePrev}>
+            <ArrowBackIcon />
+          </button>
+          <button onClick={handleNext}>
+            <ArrowForwardIcon />
+          </button>
+        </div>
       </div>
     </>
   );

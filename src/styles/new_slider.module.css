@@ -11,7 +11,6 @@ body {
 
 .container {
   position: absolute;
-  top: 50%;
   width: 1000px;
   height: 600px;
   background: #f5f5f5;
@@ -52,7 +51,6 @@ body {
   left: calc(50% + 440px);
 }
 
-/* here n = 0, 1, 2, 3,... */
 .slide .item:nth-child(n + 6) {
   left: calc(50% + 660px);
   opacity: 0;
