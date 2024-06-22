@@ -1,3 +1,9 @@
+.product_header {
+	text-align: center;
+	font-family: "Lato", sans-serif !important;
+	margin: 60px !important;
+}
+
 .product {
   position: relative;
   overflow: hidden;
@@ -84,7 +90,7 @@
 }
 
 .product_brand {
-  text-transform: uppercase;
+  font-size: 26px !important;
 }
 
 .product_des {
@@ -121,10 +127,15 @@
   opacity: 0.2;
   position: absolute;
   top: 50%;
+  border: none;
+}
+
+.btn_icon {
   font-size: 50px !important;
 }
 
 .prev_btn:hover,
 .next_btn:hover {
   opacity: 1;
+  background-color: inherit;
 }
