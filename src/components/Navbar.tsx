@@ -184,7 +184,7 @@ export default function Navbar() {
                       "& .MuiListItemIcon-root": {
                         color: "inherit",
                       },
-                      color: "darkcyan",
+                      color: "rgb(2, 136, 136)",
                     },
                     cursor: "pointer",
                     transition: "color 200ms",
@@ -204,7 +204,7 @@ export default function Navbar() {
                 <SearchIcon
                   sx={{
                     "&:hover": {
-                      color: "darkcyan",
+                      color: "rgb(2, 136, 136);",
                     },
                     fontSize: "30px",
                     m: "0 14px",
@@ -215,7 +215,7 @@ export default function Navbar() {
                   component="span"
                   sx={{
                     "&:hover": {
-                      color: "darkcyan",
+                      color: "rgb(2, 136, 136);",
                     },
                     fontSize: "16px",
                     transition: "color 200ms",
@@ -229,7 +229,7 @@ export default function Navbar() {
               <ShoppingBagIcon
                 sx={{
                   "&:hover": {
-                    color: "darkcyan",
+                    color: "rgb(2, 136, 136);",
                   },
                   fontSize: "30px",
                   transition: "color 200ms",
@@ -249,7 +249,7 @@ export default function Navbar() {
               <PersonIcon
                 sx={{
                   "&:hover": {
-                    color: "darkcyan",
+                    color: "rgb(2, 136, 136);",
                   },
                   fontSize: "30px",
                   transition: "color 200ms",
@@ -270,7 +270,7 @@ export default function Navbar() {
               <MoreIcon
                 sx={{
                   "&:hover": {
-                    color: "darkcyan",
+                    color: "rgb(2, 136, 136);",
                   },
                   transition: "color 200ms",
                 }}

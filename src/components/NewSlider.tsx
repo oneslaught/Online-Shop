@@ -1,6 +1,6 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import React, { useState } from "react";
+import React, { Component } from "react";
 
 import Bathroom from "../assets/bathroom.jpg?as=webp";
 import Bedroom from "../assets/bedroom.jpg?as=webp";
@@ -16,55 +16,68 @@ type Slide = {
   name: string;
 };
 
-const slidesData: Slide[] = [
-  { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Outdoor, name: "Outdoor" },
-  { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Dining, name: "Dining" },
-  { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Living, name: "Living" },
-  { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Bedroom, name: "Bedroom" },
-  { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Office, name: "Office" },
-  { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Bathroom, name: "Bathroom" },
-];
+type State = {
+  slides: Slide[];
+};
 
-export default function NewSlider() {
-  const [slides, setSlides] = useState<Slide[]>(slidesData);
-
-  const handleNext = () => {
-    setSlides((prevSlides) => {
-      const newSlides = [...prevSlides.slice(1), prevSlides[0]];
-      return newSlides as Slide[];
+class NewSlider extends Component<object, State> {
+  handleNext = () => {
+    this.setState((prevState) => {
+      const newSlides: Slide[] = [...prevState.slides.slice(1), prevState.slides[0]!];
+      return { slides: newSlides };
     });
   };
 
-  const handlePrev = () => {
-    setSlides((prevSlides) => {
-      const newSlides = [prevSlides[prevSlides.length - 1], ...prevSlides.slice(0, -1)];
-      return newSlides as Slide[];
+  handlePrev = () => {
+    this.setState((prevState) => {
+      const lastSlide = prevState.slides[prevState.slides.length - 1];
+      const restSlides = prevState.slides.slice(0, -1);
+      const newSlides: Slide[] = [lastSlide!, ...restSlides];
+      return { slides: newSlides };
     });
   };
 
-  return (
-    <>
-      <div className={styles.container}>
-        <div className={styles.slide}>
-          {slides.map((slide) => (
-            <div className={styles.item} key={slide.name} style={{ backgroundImage: `url(${slide.image})` }}>
-              <div className={styles.content}>
-                <div className={styles.name}>{slide.name}</div>
-                <div className={styles.des}>{slide.description}</div>
-                <button>See more</button>
+  constructor(props: object) {
+    super(props);
+    this.state = {
+      slides: [
+        { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Outdoor, name: "Outdoor" },
+        { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Dining, name: "Dining" },
+        { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Living, name: "Living" },
+        { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Bedroom, name: "Bedroom" },
+        { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Office, name: "Office" },
+        { description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, officiis.", image: Bathroom, name: "Bathroom" },
+      ],
+    };
+  }
+
+  render() {
+    return (
+      <>
+        <div className={styles.container}>
+          <div className={styles.slide}>
+            {this.state.slides.map((slide) => (
+              <div className={styles.item} key={slide.name} style={{ backgroundImage: `url(${slide.image})` }}>
+                <div className={styles.content}>
+                  <div className={styles.name}>{slide.name}</div>
+                  <div className={styles.des}>{slide.description}</div>
+                  <button>See more</button>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className={styles.button}>
+            <button onClick={this.handlePrev}>
+              <ArrowBackIcon />
+            </button>
+            <button onClick={this.handleNext}>
+              <ArrowForwardIcon />
+            </button>
+          </div>
         </div>
-        <div className={styles.button}>
-          <button onClick={handlePrev}>
-            <ArrowBackIcon />
-          </button>
-          <button onClick={handleNext}>
-            <ArrowForwardIcon />
-          </button>
-        </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
+
+export default NewSlider;
