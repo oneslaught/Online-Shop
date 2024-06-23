@@ -27,18 +27,19 @@ const slidesData: Slide[] = [
 
 export default function NewSlider() {
   const [slides, setSlides] = useState<Slide[]>(slidesData);
+  const [render, setRender] = useState<number>(0);
 
   const handleNext = () => {
+    setRender(render + 1);
     setSlides((prevSlides) => {
-      const newSlides = [...prevSlides.slice(1), prevSlides[0]];
-      return newSlides as Slide[];
+      return [...prevSlides.slice(1), prevSlides[0]!];
     });
   };
 
   const handlePrev = () => {
+    setRender(render - 1);
     setSlides((prevSlides) => {
-      const newSlides = [prevSlides[prevSlides.length - 1], ...prevSlides.slice(0, -1)];
-      return newSlides as Slide[];
+      return [prevSlides[prevSlides.length - 1]!, ...prevSlides.slice(0, -1)];
     });
   };
 
@@ -46,8 +47,8 @@ export default function NewSlider() {
     <>
       <div className={styles.container}>
         <div className={styles.slide}>
-          {slides.map((slide) => (
-            <div className={styles.item} key={slide.name} style={{ backgroundImage: `url(${slide.image})` }}>
+        {slides.map((slide, idx) => (
+            <div className={styles.item} key={render + idx} style={{ backgroundImage: `url(${slide.image})` }}>
               <div className={styles.content}>
                 <div className={styles.name}>{slide.name}</div>
                 <div className={styles.des}>{slide.description}</div>
