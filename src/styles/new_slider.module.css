@@ -28,7 +28,7 @@ body {
   background-position: 50% 50%;
   background-size: cover;
   display: inline-block;
-  transition: 5s;
+  transition: 0.5s;
 }
 
 .slide .item:nth-child(1),
@@ -53,7 +53,7 @@ body {
 
 .slide .item:nth-child(n + 6) {
   left: calc(50% + 660px);
-  /* opacity: 0; */
+  opacity: 0;
 }
 
 .item .content {
