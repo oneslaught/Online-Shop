@@ -1,5 +1,6 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Box from "@mui/material/Box";
 import React, { useEffect, useState } from "react";
 
 import Bathroom from "../assets/bathroom.jpg?as=webp";
@@ -56,28 +57,28 @@ export default function NewSlider() {
 
   return (
     <>
-      <div className={styles.container}>
-        <div className={styles.progress_bar} key={render}></div>
-        <div className={styles.slide}>
+      <Box className={styles.container}>
+        <Box className={styles.progress_bar} key={render}></Box>
+        <Box className={styles.slide}>
           {slides.map((slide, idx) => (
-            <div className={styles.item} key={render + idx} style={{ backgroundImage: `url(${slide.image})` }}>
-              <div className={styles.content}>
-                <div className={styles.name}>{slide.name}</div>
-                <div className={styles.des}>{slide.description}</div>
+            <Box className={styles.item} key={render + idx} style={{ backgroundImage: `url(${slide.image})` }}>
+              <Box className={styles.content}>
+                <Box className={styles.name}>{slide.name}</Box>
+                <Box className={styles.des}>{slide.description}</Box>
                 <button>See more</button>
-              </div>
-            </div>
+              </Box>
+            </Box>
           ))}
-        </div>
-        <div className={styles.button}>
+        </Box>
+        <Box className={styles.button}>
           <button onClick={handlePrev}>
             <ArrowBackIcon />
           </button>
           <button onClick={handleNext}>
             <ArrowForwardIcon />
           </button>
-        </div>
-      </div>
+        </Box>
+      </Box>
     </>
   );
 }

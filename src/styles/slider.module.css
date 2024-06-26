@@ -97,6 +97,7 @@
 
 .content button:hover {
   border-radius: 14px;
+  color: rgb(26, 143, 143);
 }
 
 @keyframes animate {
