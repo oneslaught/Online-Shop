@@ -113,45 +113,44 @@ export default function NewProducts() {
   }, []);
 
   return (
-    <Box sx={{ m: "90px 0" }}>
+    <Box className={styles.product}>
       <Box>
         <Typography className={styles.product_header} variant="h2">
           New products
         </Typography>
-        <Box className={styles.product}>
-          <button className={styles.prev_btn} ref={prevBtnRef}>
-            <NavigateBeforeIcon className={styles.btn_icon} />
-          </button>
-          <button className={styles.next_btn} ref={nextBtnRef}>
-            <NavigateNextIcon className={styles.btn_icon} />
-          </button>
-          <Box className={styles.product_container} ref={productContainerRef}>
-            {products.map((product) => (
-              <Box className={styles.product_card} key={product.name}>
-                <Box className={styles.product_image}>
-                  <Box className={styles.discount_tag} component="span">
-                    {product.discount}
-                  </Box>
-                  <img alt={product.name} className={styles.product_thumb} src={product.image} />
-                  <button className={styles.card_btn}>add to cart</button>
+
+        <button className={styles.prev_btn} ref={prevBtnRef}>
+          <NavigateBeforeIcon className={styles.btn_icon} />
+        </button>
+        <button className={styles.next_btn} ref={nextBtnRef}>
+          <NavigateNextIcon className={styles.btn_icon} />
+        </button>
+        <Box className={styles.product_container} ref={productContainerRef}>
+          {products.map((product) => (
+            <Box className={styles.product_card} key={product.name}>
+              <Box className={styles.product_image}>
+                <Box className={styles.discount_tag} component="span">
+                  {product.discount}
                 </Box>
-                <Box className={styles.product_info}>
-                  <Typography className={styles.product_brand} variant="h4">
-                    {product.name}
-                  </Typography>
-                  <Typography className={styles.product_des} paragraph>
-                    {product.description}
-                  </Typography>
-                  <Box className={styles.price} component="span">
-                    {product.price}$
-                  </Box>
-                  <Box className={styles.actual_price} component="span">
-                    {product.actualPrice}$
-                  </Box>
+                <img alt={product.name} className={styles.product_thumb} src={product.image} />
+                <button className={styles.card_btn}>add to cart</button>
+              </Box>
+              <Box className={styles.product_info}>
+                <Typography className={styles.product_brand} variant="h4">
+                  {product.name}
+                </Typography>
+                <Typography className={styles.product_des} paragraph>
+                  {product.description}
+                </Typography>
+                <Box className={styles.price} component="span">
+                  {product.price}$
+                </Box>
+                <Box className={styles.actual_price} component="span">
+                  {product.actualPrice}$
                 </Box>
               </Box>
-            ))}
-          </Box>
+            </Box>
+          ))}
         </Box>
       </Box>
     </Box>

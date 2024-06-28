@@ -1,0 +1,112 @@
+.navbar_container {
+  flex-grow: 1;
+}
+
+.navbar {
+  position: fixed;
+  box-shadow: none;
+}
+
+.toolbar {
+  height: 90px;
+  color: #3e4143;
+  background-color: #fff;
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+}
+
+.logo_icon {
+  width: 60px;
+  margin-right: 20px;
+}
+
+.logo_text {
+  width: 190px;
+}
+
+.list_container {
+  margin: 0 auto;
+  width: 50%;
+  display: none;
+}
+
+.list_item {
+  cursor: pointer;
+  transition: color 200ms;
+}
+
+.list_item:hover,
+.list_icon {
+  color: rgb(26, 143, 143);
+}
+
+.list_item:hover .list_text,
+.list_item:hover .list_icon {
+  color: rgb(26, 143, 143);
+}
+
+.list_text {
+  font-family: "Lato", sans-serif;
+}
+
+.icons_container {
+  display: none;
+}
+
+.icon {
+  transition: color 200ms !important;
+}
+
+.icon:hover,
+.icon:hover .search_icon,
+.icon:hover .search_label {
+  color: rgb(26, 143, 143);
+}
+
+.search_icon {
+  font-size: 30px !important;
+  margin: 0 14px;
+}
+
+.search_label {
+  font-size: 16px;
+}
+
+.cart_icon,
+.profile_icon,
+.more_icon {
+  font-size: 30px !important;
+}
+
+.mobile_menu {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 10px;
+}
+
+@media (min-width: 600px) {
+  .icons_container {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 10px;
+  }
+
+  .mobile_menu {
+    display: none;
+  }
+}
+
+@media (min-width: 1536px) {
+  .list_container {
+    display: flex;
+  }
+
+  .icons_container {
+    position: relative;
+  }
+}

@@ -7,6 +7,7 @@
 .product {
   position: relative;
   overflow: hidden;
+  margin: 90px 0;
 }
 
 .product_category {
@@ -52,7 +53,7 @@
   background-color: rgb(248, 240, 229);
   padding: 5px;
   border-radius: 5px;
-  color: darkcyan;
+  color: rgb(26, 143, 143);
   right: 10px;
   top: 10px;
   text-transform: capitalize;
@@ -80,7 +81,7 @@
 }
 
 .card_btn:hover {
-  background-color: darkcyan;
+  background-color: rgb(26, 143, 143);
   color: #fff;
 }
 

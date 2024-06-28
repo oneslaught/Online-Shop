@@ -141,7 +141,7 @@
 
 .progress_bar {
   position: absolute;
-  top: 0;
+  top: 90px;
   left: 0;
   height: 5px;
   background-color: rgb(5, 134, 134);

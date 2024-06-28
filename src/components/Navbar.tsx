@@ -23,6 +23,7 @@ import { useState } from "react";
 import DisableDefaultDrag from "../DisableDefaultDrag";
 import logoIcon from "../assets/logoIcon.png?as=webp";
 import logoText from "../assets/logoText.png?as=webp";
+import * as styles from "../styles/navbar.module.css";
 
 export default function Navbar() {
   const dragRef = DisableDefaultDrag<HTMLDivElement>();
@@ -146,19 +147,19 @@ export default function Navbar() {
   );
 
   return (
-    <Box ref={dragRef} sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ boxShadow: "none" }}>
-        <Toolbar sx={{ backgroundColor: "white", color: "#3E4143", height: "90px" }}>
+    <Box className={styles.navbar_container} ref={dragRef}>
+      <AppBar className={styles.navbar}>
+        <Toolbar className={styles.toolbar}>
           {/* logo */}
-          <Box>
+          <Box className={styles.logo_container}>
             <motion.img
               animate={{ opacity: 1, scale: 1 }}
+              className={styles.logo_icon}
               drag
               dragConstraints={{ bottom: 0, left: 0, right: 0, top: 0 }}
               dragElastic={0.015}
               initial={{ opacity: 0, scale: 0.4 }}
               src={logoIcon}
-              style={{ marginRight: "20px", width: "60px" }}
               transition={{
                 duration: 0.5,
                 ease: [0, 0.71, 0.2, 1.01],
@@ -170,71 +171,33 @@ export default function Navbar() {
                 },
               }}
             />
-            <motion.img src={logoText} style={{ width: "190px" }} />
+            <motion.img className={styles.logo_text} src={logoText} />
           </Box>
 
           {/* list / links */}
-          <Box sx={{ display: { xl: "flex", xs: "none" }, m: "0 auto", width: "50%" }}>
+          <Box className={styles.list_container}>
             <List component={Stack} direction="row">
               {menuItems.map((item) => (
-                <ListItem
-                  key={item.text}
-                  sx={{
-                    "&:hover": {
-                      "& .MuiListItemIcon-root": {
-                        color: "inherit",
-                      },
-                      color: "darkcyan",
-                    },
-                    cursor: "pointer",
-                    transition: "color 200ms",
-                  }}
-                >
-                  <ListItemText primary={item.text} primaryTypographyProps={{ sx: { fontFamily: '"Lato", sans-serif' } }} />
-                  <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItem className={styles.list_item} key={item.text}>
+                  <ListItemText className={styles.list_text} disableTypography primary={item.text} />
+                  <ListItemIcon className={styles.list_icon}>{item.icon}</ListItemIcon>
                 </ListItem>
               ))}
             </List>
           </Box>
 
           {/* icons */}
-          <Box sx={{ display: { md: "flex", xs: "none" }, float: "right" }}>
+          <Box className={styles.icons_container}>
             <Box>
-              <IconButton aria-label="search" color="inherit" disableRipple size="large">
-                <SearchIcon
-                  sx={{
-                    "&:hover": {
-                      color: "darkcyan",
-                    },
-                    fontSize: "30px",
-                    m: "0 14px",
-                    transition: "color 200ms",
-                  }}
-                />
-                <Box
-                  component="span"
-                  sx={{
-                    "&:hover": {
-                      color: "darkcyan",
-                    },
-                    fontSize: "16px",
-                    transition: "color 200ms",
-                  }}
-                >
+              <IconButton aria-label="search" className={styles.icon} color="inherit" disableRipple size="large">
+                <SearchIcon className={`${styles.search_icon}`} />
+                <Box className={`${styles.search_label}`} component="span">
                   Search
                 </Box>
               </IconButton>
             </Box>
             <IconButton aria-label="shopping badge" color="inherit" disableRipple>
-              <ShoppingBagIcon
-                sx={{
-                  "&:hover": {
-                    color: "darkcyan",
-                  },
-                  fontSize: "30px",
-                  transition: "color 200ms",
-                }}
-              />
+              <ShoppingBagIcon className={`${styles.icon} ${styles.cart_icon}`} />
             </IconButton>
             <IconButton
               aria-controls={menuId}
@@ -244,20 +207,11 @@ export default function Navbar() {
               disableRipple
               edge="end"
               onClick={handleProfileMenuOpen}
-              size="large"
             >
-              <PersonIcon
-                sx={{
-                  "&:hover": {
-                    color: "darkcyan",
-                  },
-                  fontSize: "30px",
-                  transition: "color 200ms",
-                }}
-              />
+              <PersonIcon className={`${styles.icon} ${styles.profile_icon}`} />
             </IconButton>
           </Box>
-          <Box sx={{ display: { md: "none", xs: "flex" } }}>
+          <Box className={styles.mobile_menu}>
             <IconButton
               aria-controls={mobileMenuId}
               aria-haspopup="true"
@@ -265,16 +219,8 @@ export default function Navbar() {
               color="inherit"
               disableRipple
               onClick={handleMobileMenuOpen}
-              size="large"
             >
-              <MoreIcon
-                sx={{
-                  "&:hover": {
-                    color: "darkcyan",
-                  },
-                  transition: "color 200ms",
-                }}
-              />
+              <MoreIcon className={`${styles.icon} ${styles.more_icon}`} />
             </IconButton>
           </Box>
         </Toolbar>
