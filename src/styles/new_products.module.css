@@ -19,7 +19,7 @@
 }
 
 .product_container {
-  padding: 0 10vw;
+  padding: 0 5vw;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -32,7 +32,6 @@
 .product_card {
   flex: 0 0 auto;
   width: 250px;
-  height: 450px;
   margin-right: 40px;
 }
 

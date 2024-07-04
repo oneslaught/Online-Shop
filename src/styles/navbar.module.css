@@ -3,8 +3,7 @@
 }
 
 .navbar {
-  position: fixed;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 .toolbar {
@@ -53,7 +52,10 @@
 }
 
 .icons_container {
-  display: none;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 10px;
 }
 
 .icon {
@@ -82,20 +84,13 @@
 }
 
 .mobile_menu {
-  display: flex;
+  display: none;
   justify-content: flex-end;
   position: absolute;
   right: 10px;
 }
 
 @media (min-width: 600px) {
-  .icons_container {
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    right: 10px;
-  }
-
   .mobile_menu {
     display: none;
   }

@@ -5,7 +5,6 @@ import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import AppBar from "@mui/material/AppBar";
-import Badge from "@mui/material/Badge";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
@@ -18,7 +17,6 @@ import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import { motion } from "framer-motion";
 import React from "react";
-import { useState } from "react";
 
 import DisableDefaultDrag from "../DisableDefaultDrag";
 import logoIcon from "../assets/logoIcon.png?as=webp";
@@ -27,24 +25,12 @@ import * as styles from "../styles/navbar.module.css";
 
 export default function Navbar() {
   const dragRef = DisableDefaultDrag<HTMLDivElement>();
-
-  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<HTMLElement | null>(null);
 
-  const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
 
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
   };
 
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -53,52 +39,24 @@ export default function Navbar() {
 
   const menuItems = [
     {
-      icon: <ExpandMoreIcon />,
       text: "Outdoor",
     },
     {
-      icon: <ExpandMoreIcon />,
       text: "Living",
     },
     {
-      icon: <ExpandMoreIcon />,
       text: "Dining",
     },
     {
-      icon: <ExpandMoreIcon />,
       text: "Bedroom",
     },
     {
-      icon: <ExpandMoreIcon />,
       text: "Office",
     },
     {
-      icon: <ExpandMoreIcon />,
       text: "Bathroom",
     },
   ];
-
-  const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        horizontal: "right",
-        vertical: "top",
-      }}
-      id={menuId}
-      keepMounted
-      onClose={handleMenuClose}
-      open={isMenuOpen}
-      transformOrigin={{
-        horizontal: "right",
-        vertical: "top",
-      }}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = (
@@ -125,13 +83,11 @@ export default function Navbar() {
       </MenuItem>
       <MenuItem>
         <IconButton aria-label="show 17 new notifications" color="inherit" size="large">
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
+          <NotificationsIcon />
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
+      <MenuItem>
         <IconButton
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
@@ -180,7 +136,9 @@ export default function Navbar() {
               {menuItems.map((item) => (
                 <ListItem className={styles.list_item} key={item.text}>
                   <ListItemText className={styles.list_text} disableTypography primary={item.text} />
-                  <ListItemIcon className={styles.list_icon}>{item.icon}</ListItemIcon>
+                  <ListItemIcon className={styles.list_icon}>
+                    <ExpandMoreIcon />
+                  </ListItemIcon>
                 </ListItem>
               ))}
             </List>
@@ -199,15 +157,7 @@ export default function Navbar() {
             <IconButton aria-label="shopping badge" color="inherit" disableRipple>
               <ShoppingBagIcon className={`${styles.icon} ${styles.cart_icon}`} />
             </IconButton>
-            <IconButton
-              aria-controls={menuId}
-              aria-haspopup="true"
-              aria-label="account of current user"
-              color="inherit"
-              disableRipple
-              edge="end"
-              onClick={handleProfileMenuOpen}
-            >
+            <IconButton aria-haspopup="true" aria-label="account of current user" color="inherit" disableRipple edge="end">
               <PersonIcon className={`${styles.icon} ${styles.profile_icon}`} />
             </IconButton>
           </Box>
@@ -226,7 +176,6 @@ export default function Navbar() {
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
     </Box>
   );
 }
