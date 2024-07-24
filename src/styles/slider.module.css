@@ -1,6 +1,6 @@
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 96vh;
   overflow: hidden;
   position: relative;
   background-image: url("../assets/cyanLogo.png");
@@ -159,13 +159,23 @@
   }
 }
 
-@media screen and (max-width: 999px) {
-  .item .content {
-    left: 50px;
+@media (max-width: 1408px) {
+  .container {
+    height: 87vh;
+  }
+}
+
+@media (max-width: 1208px) {
+  .container {
+    height: 80vh;
+  }
+
+  .progress_bar {
+    top: 80px;
   }
 
   .content .name {
-    font-size: 80px;
+    font-size: 90px;
   }
 
   .button {
@@ -174,7 +184,38 @@
   }
 }
 
-@media screen and (max-width: 690px) {
+@media (max-width: 808px) {
+  .container {
+    height: 70vh;
+  }
+
+  .container .slide .item {
+    top: 80%;
+    transform: translateY(-80%);
+  }
+
+  .progress_bar {
+    top: 70px;
+  }
+
+  .item .content {
+    left: 50px;
+  }
+
+  .content .name {
+    font-size: 80px;
+  }
+
+  .content .des {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 690px) {
+  .container {
+    height: 65vh;
+  }
+
   .item .content {
     top: 40%;
   }
@@ -203,22 +244,22 @@
   }
 
   .slide .item:nth-child(3) {
-    left: 54%;
+    left: 60%;
   }
   .slide .item:nth-child(4) {
-    left: calc(54% + 200px);
+    left: calc(60% + 200px);
   }
   .slide .item:nth-child(5) {
-    left: calc(54% + 400px);
+    left: calc(60% + 400px);
   }
 
   .slide .item:nth-child(n + 6) {
-    left: calc(54% + 600px);
+    left: calc(60% + 600px);
     opacity: 0;
   }
 }
 
-@media screen and (max-width: 380px) {
+@media (max-width: 380px) {
   .item .content {
     left: 26px;
   }

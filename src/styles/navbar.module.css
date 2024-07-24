@@ -18,6 +18,7 @@
 }
 
 .logo_icon {
+  display: inline;
   width: 60px;
   margin-right: 20px;
 }
@@ -28,8 +29,7 @@
 
 .list_container {
   margin: 0 auto;
-  width: 50%;
-  display: none;
+  display: flex;
 }
 
 .list_item {
@@ -54,7 +54,7 @@
 .icons_container {
   display: flex;
   justify-content: flex-end;
-  position: absolute;
+  position: relative;
   right: 10px;
 }
 
@@ -69,39 +69,110 @@
 }
 
 .search_icon {
-  font-size: 30px !important;
   margin: 0 14px;
+  padding: 12px 2px !important;
 }
 
 .search_label {
   font-size: 16px;
 }
 
+:global(.css-1do9gth[aria-label="search"]) {
+  padding: 12px 0;
+}
+
+:global(.css-4phlaq[aria-label="shopping badge"]) {
+  display: inline-block !important;
+}
+
+:global(.css-4phlaq) {
+  display: none !important;
+}
+
 .cart_icon,
 .profile_icon,
-.more_icon {
+.search_icon,
+.menu_icon {
   font-size: 30px !important;
+  color: rgb(78 76 74);
 }
 
-.mobile_menu {
-  display: none;
-  justify-content: flex-end;
-  position: absolute;
-  right: 10px;
-}
+@media (max-width: 1408px) {
+  :global(.css-4phlaq[aria-label="show more"]) {
+    display: inline-block !important;
+  }
 
-@media (min-width: 600px) {
-  .mobile_menu {
+  .toolbar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+   }
+
+  .list_container {
     display: none;
   }
-}
 
-@media (min-width: 1536px) {
-  .list_container {
-    display: flex;
+  .logo_container {
+    margin: 0 auto;
   }
 
-  .icons_container {
-    position: relative;
+  .logo_icon {
+    display: none;
+  }
+
+  .logo_text {
+    width: 220px;
+  }
+}
+
+@media (max-width: 1208px) {
+  .logo_text {
+    width: 200px;
+  }
+
+  .toolbar {
+    height: 80px;
+  }
+}
+
+@media (max-width: 808px) {
+  .toolbar {
+   padding-left: 12px !important;
+   padding-right: 0 !important;
+  }
+
+  .logo_text {
+    width: 180px;
+  }
+
+  .toolbar {
+    height: 70px;
+  }
+
+  .search_label {
+    display: none !important;
+  }
+
+  :global(.css-f172i) {
+    display: none !important;
+  }
+
+  .search_icon {
+    margin: 0;
+  }
+}
+
+@media (max-width: 608px) {
+  .logo_text {
+    width: 160px;
+  }
+
+  .cart_icon,
+  .profile_icon,
+  .menu_icon {
+    font-size: 26px !important;
+  }
+
+  .search_icon {
+    font-size: 26px !important;
   }
 }

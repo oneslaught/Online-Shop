@@ -1,6 +1,5 @@
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreIcon from "@mui/icons-material/MoreVert";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
@@ -11,8 +10,6 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import { motion } from "framer-motion";
@@ -25,17 +22,6 @@ import * as styles from "../styles/navbar.module.css";
 
 export default function Navbar() {
   const dragRef = DisableDefaultDrag<HTMLDivElement>();
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState<HTMLElement | null>(null);
-
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
 
   const menuItems = [
     {
@@ -58,54 +44,15 @@ export default function Navbar() {
     },
   ];
 
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        horizontal: "right",
-        vertical: "top",
-      }}
-      id={mobileMenuId}
-      keepMounted
-      onClose={handleMobileMenuClose}
-      open={isMobileMenuOpen}
-      transformOrigin={{
-        horizontal: "right",
-        vertical: "top",
-      }}
-    >
-      <MenuItem>
-        <IconButton aria-label="search" color="inherit" size="large">
-          <SearchIcon />
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 17 new notifications" color="inherit" size="large">
-          <NotificationsIcon />
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          aria-label="account of current user"
-          color="inherit"
-          size="large"
-        >
-          <PersonIcon />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
-
   return (
     <Box className={styles.navbar_container} ref={dragRef}>
       <AppBar className={styles.navbar}>
         <Toolbar className={styles.toolbar}>
+          {/* menu */}
+          <IconButton aria-haspopup="true" aria-label="show more" color="inherit" disableRipple>
+            <MenuRoundedIcon className={`${styles.icon} ${styles.menu_icon}`} />
+          </IconButton>
+
           {/* logo */}
           <Box className={styles.logo_container}>
             <motion.img
@@ -146,14 +93,12 @@ export default function Navbar() {
 
           {/* icons */}
           <Box className={styles.icons_container}>
-            <Box>
-              <IconButton aria-label="search" className={styles.icon} color="inherit" disableRipple size="large">
-                <SearchIcon className={`${styles.search_icon}`} />
-                <Box className={`${styles.search_label}`} component="span">
-                  Search
-                </Box>
-              </IconButton>
-            </Box>
+            <IconButton aria-label="search" className={styles.icon} color="inherit" disableRipple size="large">
+              <SearchIcon className={`${styles.search_icon}`} />
+              <Box className={`${styles.search_label}`} component="span">
+                Search
+              </Box>
+            </IconButton>
             <IconButton aria-label="shopping badge" color="inherit" disableRipple>
               <ShoppingBagIcon className={`${styles.icon} ${styles.cart_icon}`} />
             </IconButton>
@@ -161,21 +106,8 @@ export default function Navbar() {
               <PersonIcon className={`${styles.icon} ${styles.profile_icon}`} />
             </IconButton>
           </Box>
-          <Box className={styles.mobile_menu}>
-            <IconButton
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              aria-label="show more"
-              color="inherit"
-              disableRipple
-              onClick={handleMobileMenuOpen}
-            >
-              <MoreIcon className={`${styles.icon} ${styles.more_icon}`} />
-            </IconButton>
-          </Box>
         </Toolbar>
       </AppBar>
-      {renderMobileMenu}
     </Box>
   );
 }
