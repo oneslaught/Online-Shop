@@ -143,7 +143,7 @@ export default function SimpleSlider() {
         },
       },
       {
-        breakpoint: 800,
+        breakpoint: 808,
         settings: {
           infinite: true,
           initialSlide: 2,

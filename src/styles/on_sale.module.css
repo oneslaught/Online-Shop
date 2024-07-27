@@ -2,6 +2,12 @@
   text-align: center;
   font-family: "Lato", sans-serif !important;
   margin: 60px !important;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .product_category {
@@ -17,7 +23,7 @@
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  margin: 50px auto 0 auto;
+  margin: 50px auto 30px auto;
 }
 
 .product_card {
@@ -82,6 +88,8 @@
 
 .product_brand {
   font-size: 26px !important;
+  font-family: "Lato", sans-serif !important;
+  margin: 0 0 4px !important;
 }
 
 .product_des {
@@ -173,4 +181,3 @@
     margin-top: 26px !important;
   }
 }
-

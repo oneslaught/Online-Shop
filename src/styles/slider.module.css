@@ -139,6 +139,11 @@
   color: #fff;
 }
 
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .progress_bar {
   position: absolute;
   top: 90px;

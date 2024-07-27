@@ -105,7 +105,7 @@
   .toolbar {
     padding-left: 16px !important;
     padding-right: 16px !important;
-   }
+  }
 
   .list_container {
     display: none;
@@ -136,8 +136,8 @@
 
 @media (max-width: 808px) {
   .toolbar {
-   padding-left: 12px !important;
-   padding-right: 0 !important;
+    padding-left: 12px !important;
+    padding-right: 0 !important;
   }
 
   .logo_text {

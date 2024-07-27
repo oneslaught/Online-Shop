@@ -21,9 +21,7 @@ export default function AboutUs() {
             mollitia sunt, doloribus quisquam sit consequuntur eligendi harum facilis reiciendis porro. Facere, blanditiis. Optio.
           </Typography>
           <button className={styles.content_btn}>
-            <Typography className={styles.content_btn_text} component="span">
-              Learn more
-            </Typography>
+            <Typography component="span">Learn more</Typography>
           </button>
         </Box>
       </Box>

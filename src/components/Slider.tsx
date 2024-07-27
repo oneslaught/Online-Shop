@@ -29,6 +29,7 @@ const slidesData: Slide[] = [
 export default function NewSlider() {
   const [slides, setSlides] = useState<Slide[]>(slidesData);
   const [render, setRender] = useState<number>(0);
+  const [disableButtons, setDisableButtons] = useState<boolean>(false);
 
   useEffect(() => {
     const handleNextAuto = setTimeout(() => {
@@ -42,6 +43,11 @@ export default function NewSlider() {
   }, [render]);
 
   const handleNext = () => {
+    setDisableButtons(true);
+    setTimeout(() => {
+      setDisableButtons(false);
+    }, 820);
+
     setRender(render + 1);
     setSlides((prevSlides) => {
       return [...prevSlides.slice(1), prevSlides[0]!];
@@ -49,6 +55,11 @@ export default function NewSlider() {
   };
 
   const handlePrev = () => {
+    setDisableButtons(true);
+    setTimeout(() => {
+      setDisableButtons(false);
+    }, 820);
+
     setRender(render - 1);
     setSlides((prevSlides) => {
       return [prevSlides[prevSlides.length - 1]!, ...prevSlides.slice(0, -1)];
@@ -71,10 +82,10 @@ export default function NewSlider() {
           ))}
         </Box>
         <Box className={styles.button}>
-          <button onClick={handlePrev}>
+          <button className={disableButtons ? styles.disabled : ""} disabled={disableButtons} onClick={handlePrev}>
             <ArrowBackIcon />
           </button>
-          <button onClick={handleNext}>
+          <button className={disableButtons ? styles.disabled : ""} disabled={disableButtons} onClick={handleNext}>
             <ArrowForwardIcon />
           </button>
         </Box>
