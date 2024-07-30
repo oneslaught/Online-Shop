@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import AboutUs from "./components/AboutUs";
+import ContactUs from "./components/ContactUs";
 import ImageGallery from "./components/ImageGallery";
 import Navbar from "./components/Navbar";
 import OnSale from "./components/OnSale";
@@ -15,6 +16,7 @@ export default function App() {
       <OnSale />
       <AboutUs />
       <ImageGallery />
+      <ContactUs />
     </>
   );
 }

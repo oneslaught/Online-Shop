@@ -14,6 +14,7 @@
   grid-auto-rows: 100px 160px;
   grid-gap: 14px;
   grid-auto-flow: dense;
+  margin: 0 40px;
 }
 
 .gallery_item {
@@ -89,6 +90,7 @@
 @media (max-width: 1208px) {
   .container {
     grid-auto-rows: 100px 120px;
+    margin: 0 30px;
   }
 }
 
@@ -101,6 +103,7 @@
   .container {
     grid-auto-rows: 80px 100px;
     grid-gap: 10px;
+    margin: 0 26px;
   }
 
   .gallery_item:hover .image img {
@@ -117,6 +120,7 @@
   .container {
     grid-auto-rows: 60px 70px;
     grid-gap: 8px;
+    margin: 0 20px;
   }
 }
 

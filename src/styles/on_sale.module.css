@@ -72,6 +72,15 @@
   opacity: 0;
 }
 
+.card_btn_mobile {
+  position: static;
+  width: 100%;
+  transform: none;
+  opacity: 0;
+  display: none;
+  margin-bottom: 6px;
+}
+
 .product_card:hover .card_btn {
   opacity: 1;
 }
@@ -161,6 +170,19 @@
 @media (max-width: 850px) {
   .product_header {
     margin: 30px !important;
+  }
+
+  .card_btn:not(.card_btn_mobile) {
+    display: none;
+  }
+
+  .card_btn_mobile {
+    opacity: 1;
+    display: block;
+  }
+
+  .product_card:hover .card_btn:not(.card_btn_mobile) {
+    opacity: 0;
   }
 }
 

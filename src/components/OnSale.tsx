@@ -118,7 +118,7 @@ const products: Product[] = [
   },
 ];
 
-export default function SimpleSlider() {
+export default function OnSale() {
   const settings = {
     infinite: false,
     initialSlide: 0,
@@ -181,6 +181,7 @@ export default function SimpleSlider() {
               <button className={styles.card_btn}>add to cart</button>
             </Box>
             <Box className={styles.product_info}>
+              <button className={`${styles.card_btn} ${styles.card_btn_mobile}`}>add to cart</button>
               <Typography className={styles.product_brand} variant="h4">
                 {product.name}
               </Typography>
