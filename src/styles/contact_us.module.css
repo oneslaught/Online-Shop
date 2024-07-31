@@ -1,4 +1,4 @@
-.footerContainer {
+.footer_container {
   background-color: #f8f8f8;
   padding: 40px 20px;
   margin-top: 60px;
@@ -14,10 +14,25 @@
   margin: 20px;
 }
 
-.sectionTitle {
+.section_title {
   font-weight: 400;
   color: #333;
   margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo_icon {
+  width: 50%;
+  max-width: 150px;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
 }
 
 .list {
@@ -25,12 +40,12 @@
   padding: 0;
 }
 
-.listItem {
+.list_item {
   margin-bottom: 10px;
   color: #616161;
 }
 
-.newsletterForm {
+.newsletter_form {
   display: flex;
   flex-direction: column;
 }
@@ -49,26 +64,54 @@
   background-color: rgb(26, 143, 143);
   color: #fff;
   cursor: pointer;
-  transition: color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .button:hover {
-  background-color: rgb(33, 177, 177);
+  background-color: rgb(23, 161, 161);
 }
 
-.followUs {
+.follow_us {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
-.socialIcon {
-  margin: 0 10px;
-  color: #333;
+.link {
   text-decoration: none;
-  font-size: 24px;
+  color: #616161;
+  transition: color 0.3s;
 }
 
-.socialIcon:hover {
-  color: #555;
+.link:not(.social_icon):hover {
+  color: #383838;
+}
+
+.social_icon {
+  margin: 0 10px;
+  font-size: 24px;
+  transition:
+    color 0.3s,
+    transform 0.3s;
+}
+
+.social_icon:hover {
+  color: rgb(26, 143, 143);
+  transform: scale(1.1);
+}
+
+@media (max-width: 1054px) {
+  .logo_container {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer_container {
+    padding: 4px 20px;
+  }
+
+  .section {
+    margin: 4px;
+  }
 }

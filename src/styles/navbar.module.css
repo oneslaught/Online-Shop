@@ -21,6 +21,9 @@
   display: inline;
   width: 60px;
   margin-right: 20px;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
 }
 
 .logo_text {
