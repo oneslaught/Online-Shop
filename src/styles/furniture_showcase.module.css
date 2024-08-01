@@ -1,0 +1,44 @@
+.container {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	margin-top: 100px;
+	background-color: white;
+  }
+  
+  .section {
+	flex: 1;
+	margin: 0 10px;
+	text-align: center;
+  }
+  
+  .image_container {
+	margin-bottom: 15px;
+  }
+  
+  .image {
+	width: 100%;
+	height: auto;
+  }
+  
+  .heading {
+	font-size: 24px;
+	font-weight: bold;
+  }
+  
+  .subheading {
+	font-size: 16px;
+	color: gray;
+  }
+  
+  .button {
+	margin-top: 10px;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: white;
+	background-color: black;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+  }
+  
