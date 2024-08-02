@@ -2,7 +2,7 @@ import * as React from "react";
 
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
-import FurnitureShowcase from "./components/FurnitureShowcase";
+// import FurnitureShowcase from "./components/FurnitureShowcase";
 import ImageGallery from "./components/ImageGallery";
 import Navbar from "./components/Navbar";
 import OnSale from "./components/OnSale";
@@ -17,7 +17,7 @@ export default function App() {
       <OnSale />
       <AboutUs />
       <ImageGallery />
-      <FurnitureShowcase />
+      {/* <FurnitureShowcase /> */}
       <ContactUs />
     </>
   );
