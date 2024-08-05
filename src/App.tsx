@@ -2,6 +2,7 @@ import * as React from "react";
 
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
+import FurnitureExpirience from "./components/FurnitureExperience";
 // import FurnitureShowcase from "./components/FurnitureShowcase";
 import ImageGallery from "./components/ImageGallery";
 import Navbar from "./components/Navbar";
@@ -17,6 +18,7 @@ export default function App() {
       <OnSale />
       <AboutUs />
       <ImageGallery />
+      <FurnitureExpirience />
       {/* <FurnitureShowcase /> */}
       <ContactUs />
     </>
