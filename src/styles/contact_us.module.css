@@ -100,9 +100,19 @@
   transform: scale(1.1);
 }
 
-@media (max-width: 1054px) {
+@media (max-width: 1052px) {
+  .footer_container {
+    margin-top: 50px;
+  }
+
   .logo_container {
     display: none;
+  }
+}
+
+@media (max-width: 808px) {
+  .footer_container {
+    margin-top: 40px;
   }
 }
 

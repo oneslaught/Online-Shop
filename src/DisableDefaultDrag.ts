@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const DisableDrag = <T extends HTMLElement>() => {
+export default function DisableDrag<T extends HTMLElement>() {
   const ref = useRef<T>(null);
 
   useEffect(() => {
@@ -21,6 +21,4 @@ const DisableDrag = <T extends HTMLElement>() => {
   }, []);
 
   return ref;
-};
-
-export default DisableDrag;
+}

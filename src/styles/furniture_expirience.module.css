@@ -32,11 +32,48 @@
 }
 
 .problem_item h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
 .problem_item p {
   font-size: 14px;
   color: #666;
+}
+
+@media (max-width: 1052px) {
+  .problems_section h2 {
+    font-size: 24px;
+  }
+
+  .problem_item {
+    max-width: initial;
+    width: 750px;
+  }
+
+  .problem_item h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 608px) {
+  .problems_section h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .problems_section h2 {
+    font-size: 20px;
+  }
+
+  .problem_item img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .problem_item h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
 }

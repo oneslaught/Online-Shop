@@ -17,8 +17,10 @@ export default function AboutUs() {
             About Us
           </Typography>
           <Typography className={styles.content_des} paragraph>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, maxime? Explicabo doloremque, unde omnis possimus, recusandae
-            mollitia sunt, doloribus quisquam sit consequuntur eligendi harum facilis reiciendis porro. Facere, blanditiis. Optio.
+            Loxavi has been delighting its customers with stylish and high-quality furniture for home and office for many years. We are
+            proud of our wide assortment, which includes both modern and classic models. Our experts carefully select our suppliers to
+            ensure the highest level of product quality. Fast delivery and first class service are our top priorities. Welcome to Loxavi,
+            where your comfort and coziness is our main goal!
           </Typography>
           <button className={styles.content_btn}>
             <Typography component="span">Learn more</Typography>
