@@ -12,15 +12,21 @@ export default function NewCollections() {
       <div className={styles.item_container}>
         <div className={styles.item}>
           <img alt="Emperior sofa set" className={styles.image} src={EmperiorSofa} />
-          <p className={styles.caption}>Shop Emperior Sofa Set</p>
+          <p className={styles.caption}>
+            <a href="#">Shop Emperior Sofa Set</a>
+          </p>
         </div>
         <div className={styles.item}>
           <img alt="Wooden TV cabinet set" className={styles.image} src={WoodenTVCabinet} />
-          <p className={styles.caption}>Shop TV Cabinet Set</p>
+          <p className={styles.caption}>
+            <a href="#">Shop TV Cabinet Set</a>
+          </p>
         </div>
         <div className={styles.item}>
           <img alt="Cream style sofa set" className={styles.image} src={CreamSofa} />
-          <p className={styles.caption}>Shop Crem Style Sofa Set</p>
+          <p className={styles.caption}>
+            <a href="#">Shop Crem Style Sofa Set</a>
+          </p>
         </div>
       </div>
     </div>

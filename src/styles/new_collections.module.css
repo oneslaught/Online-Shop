@@ -8,7 +8,7 @@
   text-align: center;
   font-family: "Lato", sans-serif;
   font-weight: 300;
-  margin: 60px !important;
+  margin: 60px;
   font-size: 48px;
 }
 
@@ -21,10 +21,61 @@
 .image {
   width: 100%;
   height: auto;
+  transition: filter 0.5s ease-in-out;
+}
+
+.image:hover {
+  filter: brightness(1.1);
 }
 
 .caption {
   margin-top: 10px;
   font-size: 18px;
   font-weight: bold;
+}
+
+.caption a {
+  text-decoration: none;
+  color: #383838;
+  transition: color 0.3s ease-in-out;
+}
+
+.caption a:hover {
+  color: rgb(26, 143, 143);
+}
+
+@media (max-width: 1408px) {
+  .header {
+    margin: 50px;
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 1208px) {
+  .header {
+    margin: 40px;
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 1052px) {
+  .header {
+    margin: 36px;
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 808px) {
+  .header {
+    margin: 30px;
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 690px) {
+  .item_container {
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }
