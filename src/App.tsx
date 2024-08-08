@@ -5,6 +5,7 @@ import ContactUs from "./components/ContactUs";
 import FurnitureExpirience from "./components/FurnitureExperience";
 import ImageGallery from "./components/ImageGallery";
 import Navbar from "./components/Navbar";
+import NewCollections from "./components/NewCollections";
 import OnSale from "./components/OnSale";
 import Slider from "./components/Slider";
 import "./styles/app.css";
@@ -16,8 +17,9 @@ export default function App() {
       <Slider />
       <OnSale />
       <AboutUs />
-      <ImageGallery />
+      <NewCollections />
       <FurnitureExpirience />
+      <ImageGallery />
       <ContactUs />
     </>
   );

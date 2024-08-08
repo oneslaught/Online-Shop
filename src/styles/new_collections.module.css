@@ -1,0 +1,30 @@
+.item_container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.header {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  margin: 60px !important;
+  font-size: 48px;
+}
+
+.item {
+  flex: 1;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
