@@ -63,6 +63,10 @@
     margin: 36px;
     font-size: 40px;
   }
+
+  .caption {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 808px) {

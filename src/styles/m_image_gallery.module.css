@@ -116,15 +116,11 @@
 
 @media (max-width: 608px) {
   .header {
-    margin: 26px !important;
+    margin: 20px 0 0 !important;
     font-size: 26px !important;
   }
-}
 
-@media (max-width: 608px) {
-	.header {
-	  margin: 0 !important;
-	  margin-top: 20px;
-	  font-size: 30px !important;
-	}
+  .product_container {
+    margin: 20px auto 30px auto;
   }
+}

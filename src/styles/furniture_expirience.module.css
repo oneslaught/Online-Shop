@@ -42,6 +42,10 @@
 }
 
 @media (max-width: 1052px) {
+  .problems_section {
+    margin-top: 40px;
+  }
+
   .problems_section h2 {
     font-size: 24px;
   }
@@ -57,12 +61,20 @@
 }
 
 @media (max-width: 608px) {
+  .problems_section {
+    margin-top: 30px;
+  }
+
   .problems_section h2 {
     font-size: 22px;
   }
 }
 
 @media (max-width: 480px) {
+  .problems_section {
+    margin-top: 0;
+  }
+
   .problems_section h2 {
     font-size: 20px;
   }
