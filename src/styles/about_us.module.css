@@ -35,14 +35,17 @@
 
 .content_name {
   text-align: center;
-  font-family: "Lato", sans-serif !important;
+  font-family: "Lato", sans-serif;
+  font-size: 50px;
+  font-weight: 300;
   padding: 0 0 12px;
+  margin-bottom: 0;
 }
 
 .content_des {
   text-align: center;
   color: #333;
-  font-family: "Raleway", sans-serif !important;
+  font-family: "Raleway", sans-serif;
 }
 
 .content_btn {
@@ -92,7 +95,7 @@
 
 @media (max-width: 1408px) {
   .content_name {
-    font-size: 48px !important;
+    font-size: 48px;
   }
 }
 
@@ -102,7 +105,7 @@
   }
 
   .content_name {
-    font-size: 42px !important;
+    font-size: 42px;
   }
 }
 
@@ -116,7 +119,7 @@
   }
 
   .content_name {
-    font-size: 42px !important;
+    font-size: 42px;
   }
 }
 
@@ -126,12 +129,12 @@
   }
 
   .content_name {
-    font-size: 38px !important;
+    font-size: 38px;
   }
 
   .content_des,
   .content_btn span {
-    font-size: 14px !important;
+    font-size: 14px;
   }
 
   .content_btn {
@@ -156,7 +159,7 @@
 
   .content_des,
   .content_btn span {
-    font-size: 15px !important;
+    font-size: 15px;
   }
 }
 
@@ -171,16 +174,18 @@
   }
 
   .content_name {
-    font-size: 36px !important;
+    font-size: 36px;
+    padding: 0;
   }
 
   .content_des,
   .content_btn span {
-    font-size: 14px !important;
+    font-size: 14px;
   }
 
   .content_des {
     margin: 0;
+    padding: 10px;
   }
 
   .content_btn {
