@@ -1,9 +1,9 @@
 import React from "react";
 
-import deliiveryTruck from "../assets/delivery-truck.png?as=webp";
-import deliveryPackage from "../assets/package.png?as=webp";
-import trees from "../assets/trees.png?as=webp";
-import * as styles from "../styles/furniture_expirience.module.css";
+import deliiveryTruck from "../../assets/delivery-truck.png?as=webp";
+import deliveryPackage from "../../assets/package.png?as=webp";
+import trees from "../../assets/trees.png?as=webp";
+import * as styles from "../../styles/furniture_expirience.module.css";
 
 export default function ProblemsSection() {
   return (

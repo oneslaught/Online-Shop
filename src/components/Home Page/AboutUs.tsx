@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-import image from "../assets/about_us.jpg?as=webp";
-import * as styles from "../styles/about_us.module.css";
-import StringSplitRegex from "../utils/StringSplitRegex";
+import image from "../../assets/about_us.jpg?as=webp";
+import * as styles from "../../styles/about_us.module.css";
+import StringSplitRegex from "../../utils/StringSplitRegex";
 
 const heading = "About Us";
 const paragraph =

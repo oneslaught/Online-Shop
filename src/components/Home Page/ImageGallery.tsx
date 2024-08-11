@@ -13,16 +13,16 @@ interface GalleryProps {
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import bed from "../assets/bed.jpeg?as=webp";
-import besideTable from "../assets/beside_table.jpg?as=webp";
-import chair from "../assets/chair.jpg?as=webp";
-import closet from "../assets/closet.jpg?as=webp";
-import fireplace from "../assets/fireplace.jpg?as=webp";
-import mirror from "../assets/mirror.jpg?as=webp";
-import sofa from "../assets/sofa.jpg?as=webp";
-import table from "../assets/table.jpg?as=webp";
-import tableLamp from "../assets/table_lamp.jpeg?as=webp";
-import * as styles from "../styles/image_gallery.module.css";
+import bed from "../../assets/bed.jpeg?as=webp";
+import besideTable from "../../assets/beside_table.jpg?as=webp";
+import chair from "../../assets/chair.jpg?as=webp";
+import closet from "../../assets/closet.jpg?as=webp";
+import fireplace from "../../assets/fireplace.jpg?as=webp";
+import mirror from "../../assets/mirror.jpg?as=webp";
+import sofa from "../../assets/sofa.jpg?as=webp";
+import table from "../../assets/table.jpg?as=webp";
+import tableLamp from "../../assets/table_lamp.jpeg?as=webp";
+import * as styles from "../../styles/image_gallery.module.css";
 
 const firstImages = [
   { h: 3, name: "beds", src: bed, w: 4 },
