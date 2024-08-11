@@ -15,10 +15,10 @@ import Toolbar from "@mui/material/Toolbar";
 import { motion } from "framer-motion";
 import React from "react";
 
-import logoIcon from "../assets/logoIcon.png?as=webp";
-import logoText from "../assets/logoText.png?as=webp";
-import * as styles from "../styles/navbar.module.css";
-import DisableDefaultDrag from "../utils/DisableDefaultDrag";
+import logoIcon from "../../assets/logoIcon.png?as=webp";
+import logoText from "../../assets/logoText.png?as=webp";
+import * as styles from "../../styles/navbar.module.css";
+import DisableDefaultDrag from "../../utils/DisableDefaultDrag";
 
 export default function Navbar() {
   const dragRef = DisableDefaultDrag<HTMLDivElement>();

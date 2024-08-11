@@ -5,18 +5,18 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 import Slider from "react-slick";
 
-import diningSet from "../assets/dining_table_set.jpg?as=webp";
-import nightStand from "../assets/eily_night_stand.jpg?as=webp";
-import bed from "../assets/hattie_bed_frame.jpg?as=webp";
-import tvStand from "../assets/iwell_tv_stand.jpg?as=webp";
-import closet from "../assets/mahmayi_closet.jpg?as=webp";
-import besideTable from "../assets/maison_esto_hanging_beside_table.jpg?as=webp";
-import lamp from "../assets/mushroom_lamp.jpg?as=webp";
-import mirror from "../assets/neutype_arched_mirror.jpg?as=webp";
-import chairs from "../assets/saville_dining_chairs.jpeg?as=webp";
-import reclinerChair from "../assets/soarflash_power_recliner_chair.jpg?as=webp";
-import sofa from "../assets/sofa_angel.jpg?as=webp";
-import * as styles from "../styles/on_sale.module.css";
+import diningSet from "../../assets/dining_table_set.jpg?as=webp";
+import nightStand from "../../assets/eily_night_stand.jpg?as=webp";
+import bed from "../../assets/hattie_bed_frame.jpg?as=webp";
+import tvStand from "../../assets/iwell_tv_stand.jpg?as=webp";
+import closet from "../../assets/mahmayi_closet.jpg?as=webp";
+import besideTable from "../../assets/maison_esto_hanging_beside_table.jpg?as=webp";
+import lamp from "../../assets/mushroom_lamp.jpg?as=webp";
+import mirror from "../../assets/neutype_arched_mirror.jpg?as=webp";
+import chairs from "../../assets/saville_dining_chairs.jpeg?as=webp";
+import reclinerChair from "../../assets/soarflash_power_recliner_chair.jpg?as=webp";
+import sofa from "../../assets/sofa_angel.jpg?as=webp";
+import * as styles from "../../styles/on_sale.module.css";
 
 interface Product {
   actualPrice: number;
