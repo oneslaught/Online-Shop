@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import image from "../../assets/about_us.jpg?as=webp";
 import * as styles from "../../styles/about_us.module.css";
@@ -20,6 +21,12 @@ const charVariants = {
 };
 
 export default function AboutUs() {
+  const navigate = useNavigate();
+
+  const handleLearnMoreClick = () => {
+    navigate("/about-us");
+  };
+
   const headingChars = StringSplitRegex(heading);
   const paragraphChars = StringSplitRegex(paragraph);
   return (
@@ -55,7 +62,7 @@ export default function AboutUs() {
               </motion.span>
             ))}
           </motion.p>
-          <button className={styles.content_btn}>
+          <button className={styles.content_btn} onClick={handleLearnMoreClick}>
             <span>Learn more</span>
           </button>
         </div>

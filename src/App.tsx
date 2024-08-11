@@ -1,28 +1,25 @@
 import * as React from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import AboutUs from "./components/AboutUs";
-import ContactUs from "./components/ContactUs";
-import FurnitureCategories from "./components/FurnitureCategories";
-import FurnitureExpirience from "./components/FurnitureExperience";
-import ImageGallery from "./components/ImageGallery";
-import Navbar from "./components/Navbar";
-import NewCollections from "./components/NewCollections";
-import OnSale from "./components/OnSale";
-import Slider from "./components/Slider";
+import { RouterExample } from "./components/About Us Page/RouterExample";
+import HomePage from "./components/Home Page/HomePage";
 import "./styles/app.css";
+
+const router = createBrowserRouter([
+  {
+    element: <HomePage />,
+    path: "/",
+  },
+  {
+    element: <RouterExample />,
+    path: "/about-us",
+  },
+]);
 
 export default function App() {
   return (
     <>
-      <Navbar />
-      <Slider />
-      <OnSale />
-      <AboutUs />
-      <NewCollections />
-      <FurnitureCategories />
-      <FurnitureExpirience />
-      <ImageGallery />
-      <ContactUs />
+      <RouterProvider router={router} />
     </>
   );
 }
