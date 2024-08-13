@@ -9,6 +9,7 @@ import "webpack-dev-server";
 const webpackConfig: Configuration = {
   devServer: {
     compress: true,
+    historyApiFallback: true,
     port: 9000,
     static: {
       directory: path.join(__dirname, "public"),

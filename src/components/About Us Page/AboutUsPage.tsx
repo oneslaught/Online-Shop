@@ -1,14 +1,14 @@
 import React from "react";
 
-import ContactUs from "../ContactUs";
-import Navbar from "../Navbar";
-import OurStory from "./OurStory";
+import ContactUs from "../Reusable Components/ContactUs";
+import Navbar from "../Reusable Components/Navbar";
+import FetureHighlight from "./FeatureHighlight";
 
 export default function AboutUsPage() {
   return (
     <>
       <Navbar />
-      <OurStory />
+      <FetureHighlight />
       <ContactUs />
     </>
   );

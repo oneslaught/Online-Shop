@@ -14,21 +14,25 @@ import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import { motion } from "framer-motion";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-import logoIcon from "../assets/logoIcon.png?as=webp";
-import logoText from "../assets/logoText.png?as=webp";
-import * as styles from "../styles/navbar.module.css";
-import DisableDefaultDrag from "../utils/DisableDefaultDrag";
+import logoIcon from "../../assets/logoIcon.png?as=webp";
+import logoText from "../../assets/logoText.png?as=webp";
+import * as styles from "../../styles/navbar.module.css";
+import DisableDefaultDrag from "../../utils/DisableDefaultDrag";
 
 export default function Navbar() {
+  const location = useLocation();
   const navigate = useNavigate();
 
   const handleHomePageClick = () => {
-    navigate("/");
+    if (location.pathname === "/") {
+      window.location.reload();
+    } else {
+      navigate("/");
+    }
   };
 
-  // need to be replaced with <Link /> to prevent unwanted page reloadeng
   const dragRef = DisableDefaultDrag<HTMLDivElement>();
 
   const menuItems = [

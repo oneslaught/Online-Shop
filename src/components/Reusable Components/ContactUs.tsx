@@ -4,38 +4,39 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import XIcon from "@mui/icons-material/X";
 import { motion } from "framer-motion";
 import React from "react";
+import { Link } from "react-router-dom";
 
-import logoIcon from "../assets/logoIcon.png?as=webp";
-import * as styles from "../styles/contact_us.module.css";
+import logoIcon from "../../assets/logoIcon.png?as=webp";
+import * as styles from "../../styles/contact_us.module.css";
 
 const sections = [
   {
     links: [
-      { href: "#", text: "About us" },
-      { href: "#", text: "Press" },
-      { href: "#", text: "Careers" },
-      { href: "#", text: "Contact" },
-      { href: "#", text: "Gift Card" },
+      { text: "About us", to: "/about-us" },
+      { text: "Press", to: "/" },
+      { text: "Careers", to: "/" },
+      { text: "Contact", to: "/" },
+      { text: "Gift Card", to: "/" },
     ],
     title: "Our Company",
   },
   {
     links: [
-      { href: "#", text: "Track My Order" },
-      { href: "#", text: "Start a Return" },
-      { href: "#", text: "FAQ" },
-      { href: "#", text: "Shipping & Returns Policy" },
-      { href: "#", text: "Terms of Service" },
-      { href: "#", text: "Privacy Policy" },
+      { text: "Track My Order", to: "/" },
+      { text: "Start a Return", to: "/" },
+      { text: "FAQ", to: "/" },
+      { text: "Shipping & Returns Policy", to: "/" },
+      { text: "Terms of Service", to: "/" },
+      { text: "Privacy Policy", to: "/" },
     ],
     title: "Customer Care",
   },
   {
     links: [
-      { href: "#", text: "About us" },
-      { href: "#", text: "Samples" },
-      { href: "#", text: "Trade Program" },
-      { href: "#", text: "Affiliate Program" },
+      { text: "About us", to: "/" },
+      { text: "Samples", to: "/" },
+      { text: "Trade Program", to: "/" },
+      { text: "Affiliate Program", to: "/" },
     ],
     title: "Programs",
   },
@@ -78,9 +79,9 @@ export default function ContactUs() {
           <ul className={styles.list}>
             {section.links.map((link, linkIndex) => (
               <li className={styles.list_item} key={linkIndex}>
-                <a className={styles.link} href={link.href}>
+                <Link className={styles.link} to={link.to}>
                   {link.text}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

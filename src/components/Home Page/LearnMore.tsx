@@ -26,7 +26,6 @@ export default function LearnMore() {
   const handleLearnMoreClick = () => {
     navigate("/about-us");
   };
-  // need to be replaced with <Link /> to prevent unwanted page reloadeng
 
   const headingChars = StringSplitRegex(heading);
   const paragraphChars = StringSplitRegex(paragraph);

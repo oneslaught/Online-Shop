@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import ContactUs from "../ContactUs";
-import Navbar from "../Navbar";
+import ContactUs from "../Reusable Components/ContactUs";
+import Navbar from "../Reusable Components/Navbar";
 import FurnitureCategories from "./FurnitureCategories";
 import FurnitureExpirience from "./FurnitureExperience";
 import ImageGallery from "./ImageGallery";
