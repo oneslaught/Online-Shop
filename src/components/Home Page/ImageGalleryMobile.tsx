@@ -14,7 +14,7 @@ import tableLamp from "../../assets/m_lamp.jpg?as=webp";
 import mirror from "../../assets/m_mirror.jpg?as=webp";
 import sofa from "../../assets/m_sofa.jpg?as=webp";
 import table from "../../assets/m_table.jpg?as=webp";
-import * as styles from "../../styles/m_image_gallery.module.css";
+import * as styles from "../../styles/home styles/m_image_gallery.module.css";
 
 interface Product {
   image: string;

@@ -1,11 +1,11 @@
 import * as React from "react";
 
-import AboutUs from "./AboutUs";
-import ContactUs from "./ContactUs";
+import ContactUs from "../ContactUs";
+import Navbar from "../Navbar";
 import FurnitureCategories from "./FurnitureCategories";
 import FurnitureExpirience from "./FurnitureExperience";
 import ImageGallery from "./ImageGallery";
-import Navbar from "./Navbar";
+import LearnMore from "./LearnMore";
 import NewCollections from "./NewCollections";
 import OnSale from "./OnSale";
 import Slider from "./Slider";
@@ -16,7 +16,7 @@ export default function Home() {
       <Navbar />
       <Slider />
       <OnSale />
-      <AboutUs />
+      <LearnMore />
       <NewCollections />
       <FurnitureCategories />
       <FurnitureExpirience />

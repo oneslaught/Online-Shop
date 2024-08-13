@@ -5,8 +5,8 @@ import XIcon from "@mui/icons-material/X";
 import { motion } from "framer-motion";
 import React from "react";
 
-import logoIcon from "../../assets/logoIcon.png?as=webp";
-import * as styles from "../../styles/contact_us.module.css";
+import logoIcon from "../assets/logoIcon.png?as=webp";
+import * as styles from "../styles/contact_us.module.css";
 
 const sections = [
   {

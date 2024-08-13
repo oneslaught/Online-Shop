@@ -3,10 +3,7 @@
   height: 96vh;
   overflow: hidden;
   position: relative;
-  background-image: url("../assets/cyanLogo.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 427px 146px;
+  background-color: #f7f7f0;
 }
 
 .container .slide .item {

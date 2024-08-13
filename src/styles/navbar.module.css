@@ -28,6 +28,7 @@
 
 .logo_text {
   width: 190px;
+  cursor: pointer;
 }
 
 .list_container {

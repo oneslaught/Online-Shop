@@ -1,7 +1,7 @@
 import * as React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { RouterExample } from "./components/About Us Page/RouterExample";
+import AboutUsPage from "./components/About Us Page/AboutUsPage";
 import HomePage from "./components/Home Page/HomePage";
 import "./styles/app.css";
 
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     path: "/",
   },
   {
-    element: <RouterExample />,
+    element: <AboutUsPage />,
     path: "/about-us",
   },
 ]);

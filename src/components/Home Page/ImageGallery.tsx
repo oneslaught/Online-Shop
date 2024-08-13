@@ -22,7 +22,7 @@ import mirror from "../../assets/mirror.jpg?as=webp";
 import sofa from "../../assets/sofa.jpg?as=webp";
 import table from "../../assets/table.jpg?as=webp";
 import tableLamp from "../../assets/table_lamp.jpeg?as=webp";
-import * as styles from "../../styles/image_gallery.module.css";
+import * as styles from "../../styles/home styles/image_gallery.module.css";
 
 const firstImages = [
   { h: 3, name: "beds", src: bed, w: 4 },

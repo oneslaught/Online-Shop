@@ -14,34 +14,30 @@ import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import { motion } from "framer-motion";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-import logoIcon from "../../assets/logoIcon.png?as=webp";
-import logoText from "../../assets/logoText.png?as=webp";
-import * as styles from "../../styles/navbar.module.css";
-import DisableDefaultDrag from "../../utils/DisableDefaultDrag";
+import logoIcon from "../assets/logoIcon.png?as=webp";
+import logoText from "../assets/logoText.png?as=webp";
+import * as styles from "../styles/navbar.module.css";
+import DisableDefaultDrag from "../utils/DisableDefaultDrag";
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  const handleHomePageClick = () => {
+    navigate("/");
+  };
+
+  // need to be replaced with <Link /> to prevent unwanted page reloadeng
   const dragRef = DisableDefaultDrag<HTMLDivElement>();
 
   const menuItems = [
-    {
-      text: "Outdoor",
-    },
-    {
-      text: "Living",
-    },
-    {
-      text: "Dining",
-    },
-    {
-      text: "Bedroom",
-    },
-    {
-      text: "Office",
-    },
-    {
-      text: "Bathroom",
-    },
+    { text: "Outdoor" },
+    { text: "Living" },
+    { text: "Dining" },
+    { text: "Bedroom" },
+    { text: "Office" },
+    { text: "Bathroom" },
   ];
 
   return (
@@ -74,7 +70,7 @@ export default function Navbar() {
                 },
               }}
             />
-            <motion.img className={styles.logo_text} src={logoText} />
+            <motion.img className={styles.logo_text} onClick={handleHomePageClick} src={logoText} />
           </Box>
 
           {/* list / links */}

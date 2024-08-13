@@ -9,7 +9,7 @@ import Dining from "../../assets/kitchen.jpg?as=webp";
 import Living from "../../assets/living_room.jpg?as=webp";
 import Office from "../../assets/office.jpeg?as=webp";
 import Outdoor from "../../assets/outdoor.jpg?as=webp";
-import * as styles from "../../styles/slider.module.css";
+import * as styles from "../../styles/home styles/slider.module.css";
 
 type Slide = {
   description: string;

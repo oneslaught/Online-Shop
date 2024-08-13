@@ -3,7 +3,7 @@ import React from "react";
 import CreamSofa from "../../assets/cream_style_sofa_set.jpg?as=webp";
 import EmperiorSofa from "../../assets/emperior_sofa_set.jpg?as=webp";
 import WoodenTVCabinet from "../../assets/wooden_tv_cabinet_set.jpg?as=webp";
-import * as styles from "../../styles/new_collections.module.css";
+import * as styles from "../../styles/home styles/new_collections.module.css";
 
 export default function NewCollections() {
   return (

@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import image from "../../assets/about_us.jpg?as=webp";
-import * as styles from "../../styles/about_us.module.css";
+import * as styles from "../../styles/home styles/learn_more.module.css";
 import StringSplitRegex from "../../utils/StringSplitRegex";
 
 const heading = "About Us";
@@ -20,12 +20,13 @@ const charVariants = {
   reveal: { opacity: 1 },
 };
 
-export default function AboutUs() {
+export default function LearnMore() {
   const navigate = useNavigate();
 
   const handleLearnMoreClick = () => {
     navigate("/about-us");
   };
+  // need to be replaced with <Link /> to prevent unwanted page reloadeng
 
   const headingChars = StringSplitRegex(heading);
   const paragraphChars = StringSplitRegex(paragraph);

@@ -16,7 +16,7 @@ import mirror from "../../assets/neutype_arched_mirror.jpg?as=webp";
 import chairs from "../../assets/saville_dining_chairs.jpeg?as=webp";
 import reclinerChair from "../../assets/soarflash_power_recliner_chair.jpg?as=webp";
 import sofa from "../../assets/sofa_angel.jpg?as=webp";
-import * as styles from "../../styles/on_sale.module.css";
+import * as styles from "../../styles/home styles/on_sale.module.css";
 
 interface Product {
   actualPrice: number;
