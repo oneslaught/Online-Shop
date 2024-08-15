@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
+import { Tilt } from "react-tilt";
 
 import cat from "../../assets/cat.jpg?as=webp";
 import family from "../../assets/family.jpg?as=webp";
 import kids from "../../assets/kids.jpg?as=webp";
-import * as styles from "../../styles/about us styles/our_story.module.css";
+import * as styles from "../../styles/about us styles/feature_highlight.module.css";
 import StringSplitRegex from "../../utils/StringSplitRegex";
 
 interface ContentProps {
@@ -51,12 +52,44 @@ const charVariants = {
   reveal: { opacity: 1 },
 };
 
+const tiltOptions = {
+  easing: "cubic-bezier(.03,.98,.52,.99)",
+  max: 25,
+  perspective: 1200,
+  scale: 1.0,
+  speed: 400,
+};
+
 const ContentBlock = ({ heading, image, paragraph, reverse }: ContentProps) => {
   const headingChars = StringSplitRegex(heading);
   const paragraphChars = StringSplitRegex(paragraph);
+  const [isInView, setIsInView] = useState<boolean>(false);
+
+  const imageVariants = {
+    hidden: {
+      x: reverse ? "100vw" : "-100vw",
+    },
+    visible: {
+      transition: { damping: 20, stiffness: 70, type: "spring" },
+      x: 0,
+    },
+  };
   return (
     <div className={reverse ? styles.rev_container : styles.container}>
-      <img alt={heading} className={styles.image} src={image} />
+      <Tilt className={styles.easing_anim} options={tiltOptions}>
+        <motion.img
+          alt={heading}
+          animate={isInView ? "visible" : "hidden"}
+          className={styles.image}
+          initial="hidden"
+          onViewportEnter={() => {
+            setIsInView(true);
+          }}
+          src={image}
+          variants={imageVariants}
+          viewport={{ once: true }}
+        />
+      </Tilt>
       <div className={styles.content_container}>
         <div className={styles.content}>
           <motion.h2

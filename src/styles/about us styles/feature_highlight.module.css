@@ -20,6 +20,10 @@
   border-radius: 30px;
 }
 
+.easing_anim {
+  transition: transform 1.2s cubic-bezier(.03,.98,.52,.99);
+}
+
 .content_container {
   display: grid;
   flex: 2;
