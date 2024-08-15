@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import React, { useState } from "react";
+import { motion, useInView } from "framer-motion";
+import React, { useRef } from "react";
 import { Tilt } from "react-tilt";
 
 import cat from "../../assets/cat.jpg?as=webp";
@@ -53,7 +53,6 @@ const charVariants = {
 };
 
 const tiltOptions = {
-  easing: "cubic-bezier(.03,.98,.52,.99)",
   max: 25,
   perspective: 1200,
   scale: 1.0,
@@ -63,32 +62,24 @@ const tiltOptions = {
 const ContentBlock = ({ heading, image, paragraph, reverse }: ContentProps) => {
   const headingChars = StringSplitRegex(heading);
   const paragraphChars = StringSplitRegex(paragraph);
-  const [isInView, setIsInView] = useState<boolean>(false);
 
-  const imageVariants = {
-    hidden: {
-      x: reverse ? "100vw" : "-100vw",
-    },
-    visible: {
-      transition: { damping: 20, stiffness: 70, type: "spring" },
-      x: 0,
-    },
-  };
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <div className={reverse ? styles.rev_container : styles.container}>
       <Tilt className={styles.easing_anim} options={tiltOptions}>
-        <motion.img
-          alt={heading}
-          animate={isInView ? "visible" : "hidden"}
-          className={styles.image}
-          initial="hidden"
-          onViewportEnter={() => {
-            setIsInView(true);
-          }}
-          src={image}
-          variants={imageVariants}
-          viewport={{ once: true }}
-        />
+        <section ref={ref}>
+          <motion.img
+            alt={heading}
+            className={styles.image}
+            src={image}
+            style={{
+              opacity: isInView ? 1 : 0,
+              transform: isInView ? "none" : `translateX(${reverse ? "100vw" : "-100vw"})`,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          />
+        </section>
       </Tilt>
       <div className={styles.content_container}>
         <div className={styles.content}>
