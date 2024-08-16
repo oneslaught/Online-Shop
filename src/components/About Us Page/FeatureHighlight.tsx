@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Tilt } from "react-tilt";
 
 import cat from "../../assets/cat.jpg?as=webp";
@@ -64,51 +64,109 @@ const ContentBlock = ({ heading, image, paragraph, reverse }: ContentProps) => {
   const paragraphChars = StringSplitRegex(paragraph);
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false });
+
+  const [viewCount, setViewCount] = useState(0);
+  const [animationCompleted, setAnimationCompleted] = useState(false);
+  const [initialRender, setInitialRender] = useState(true);
+
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem("hasVisitedAboutUs");
+    if (!hasVisited) {
+      setInitialRender(true);
+      sessionStorage.setItem("hasVisitedAboutUs", "true");
+    } else {
+      setInitialRender(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isInView && viewCount < 2 && !animationCompleted) {
+      setViewCount((prevCount) => prevCount + 1);
+    }
+    if (viewCount >= 2) {
+      setAnimationCompleted(true);
+    }
+  }, [isInView, viewCount, animationCompleted]);
+
   return (
     <div className={reverse ? styles.rev_container : styles.container}>
       <Tilt className={styles.easing_anim} options={tiltOptions}>
         <section ref={ref}>
           <motion.img
             alt={heading}
-            className={styles.image}
-            src={image}
-            style={{
-              opacity: isInView ? 1 : 0,
-              transform: isInView ? "none" : `translateX(${reverse ? "100vw" : "-100vw"})`,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            animate={{
+              opacity: animationCompleted || isInView ? 1 : 0,
+              transform: animationCompleted || isInView ? "none" : `translateX(${reverse ? "100vw" : "-100vw"})`,
             }}
+            className={styles.image}
+            initial={false}
+            src={image}
+            transition={{ delay: 0.5, duration: 0.9, ease: [0.17, 0.55, 0.55, 1] }}
           />
         </section>
       </Tilt>
       <div className={styles.content_container}>
         <div className={styles.content}>
-          <motion.h2
-            className={styles.content_name}
-            initial="hidden"
-            transition={{ staggerChildren: 0.03 }}
-            viewport={{ once: true }}
-            whileInView="reveal"
-          >
-            {headingChars.map((char) => (
-              <motion.span key={char} transition={{ duration: 0.5 }} variants={charVariants}>
-                {char}
-              </motion.span>
-            ))}
-          </motion.h2>
-          <motion.p
-            className={styles.content_des}
-            initial="hidden"
-            transition={{ staggerChildren: 0.015 }}
-            viewport={{ once: true }}
-            whileInView="reveal"
-          >
-            {paragraphChars.map((char) => (
-              <motion.span key={char} transition={{ duration: 0.35 }} variants={charVariants}>
-                {char}
-              </motion.span>
-            ))}
-          </motion.p>
+          {initialRender ? (
+            <>
+              <motion.h2
+                animate={viewCount < 2 ? "hidden" : "reveal"}
+                className={styles.content_name}
+                initial="hidden"
+                style={{ opacity: animationCompleted ? 1 : 0 }}
+                transition={{ staggerChildren: 0.03 }}
+              >
+                {headingChars.map((char, index) => (
+                  <motion.span key={index} transition={{ duration: 0.5 }} variants={charVariants}>
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.h2>
+              <motion.p
+                animate={viewCount < 2 ? "hidden" : "reveal"}
+                className={styles.content_des}
+                initial="hidden"
+                style={{ opacity: animationCompleted ? 1 : 0 }}
+                transition={{ staggerChildren: 0.015 }}
+              >
+                {paragraphChars.map((char, index) => (
+                  <motion.span key={index} transition={{ duration: 0.35 }} variants={charVariants}>
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.p>
+            </>
+          ) : (
+            <>
+              <motion.h2
+                className={styles.content_name}
+                initial="hidden"
+                transition={{ staggerChildren: 0.03 }}
+                viewport={{ once: true }}
+                whileInView="reveal"
+              >
+                {headingChars.map((char) => (
+                  <motion.span key={char} transition={{ duration: 0.5 }} variants={charVariants}>
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.h2>
+              <motion.p
+                className={styles.content_des}
+                initial="hidden"
+                transition={{ staggerChildren: 0.015 }}
+                viewport={{ once: true }}
+                whileInView="reveal"
+              >
+                {paragraphChars.map((char) => (
+                  <motion.span key={char} transition={{ duration: 0.35 }} variants={charVariants}>
+                    {char}
+                  </motion.span>
+                ))}
+              </motion.p>
+            </>
+          )}
         </div>
       </div>
     </div>
