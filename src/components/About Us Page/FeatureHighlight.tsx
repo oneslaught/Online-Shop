@@ -2,9 +2,9 @@ import { motion, useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import { Tilt } from "react-tilt";
 
-import cat from "../../assets/cat.jpg?as=webp";
-import family from "../../assets/family.jpg?as=webp";
-import kids from "../../assets/kids.jpg?as=webp";
+import cat from "../../assets/About Us Page Images/feature highlight img/cat.jpg?as=webp";
+import family from "../../assets/About Us Page Images/feature highlight img/family.jpg?as=webp";
+import kids from "../../assets/About Us Page Images/feature highlight img/kids.jpg?as=webp";
 import * as styles from "../../styles/about us styles/feature_highlight.module.css";
 import StringSplitRegex from "../../utils/StringSplitRegex";
 

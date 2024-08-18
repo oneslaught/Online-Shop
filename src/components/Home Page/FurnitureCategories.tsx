@@ -1,9 +1,9 @@
 import React from "react";
 
-import wallShelf from "../../assets/cube_wall_shelf.jpg?as=webp";
-import officeChair from "../../assets/office_chair.jpg?as=webp";
-import pouf from "../../assets/pouf.jpg?as=webp";
-import shoeRack from "../../assets/shoe_rack.jpg?as=webp";
+import wallShelf from "../../assets/Home Page Images/furniture categories img/cube_wall_shelf.jpg?as=webp";
+import officeChair from "../../assets/Home Page Images/furniture categories img/office_chair.jpg?as=webp";
+import pouf from "../../assets/Home Page Images/furniture categories img/pouf.jpg?as=webp";
+import shoeRack from "../../assets/Home Page Images/furniture categories img/shoe_rack.jpg?as=webp";
 import * as styles from "../../styles/home styles/furniture_categories.module.css";
 
 interface Category {

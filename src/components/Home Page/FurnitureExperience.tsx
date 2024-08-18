@@ -1,8 +1,8 @@
 import React from "react";
 
-import deliiveryTruck from "../../assets/delivery-truck.png?as=webp";
-import deliveryPackage from "../../assets/package.png?as=webp";
-import trees from "../../assets/trees.png?as=webp";
+import deliveryTruck from "../../assets/Home Page Images/furniture expirience img/delivery_truck.png?as=webp";
+import deliveryPackage from "../../assets/Home Page Images/furniture expirience img/package.png?as=webp";
+import trees from "../../assets/Home Page Images/furniture expirience img/trees.png?as=webp";
 import * as styles from "../../styles/home styles/furniture_expirience.module.css";
 
 export default function ProblemsSection() {
@@ -11,7 +11,7 @@ export default function ProblemsSection() {
       <h2>We’re Transforming Your Furniture Experience</h2>
       <div className={styles.problems_container}>
         <div className={styles.problem_item}>
-          <img alt="Fast Shipping" src={deliiveryTruck} />
+          <img alt="Fast Shipping" src={deliveryTruck} />
           <h3>Speedy Delivery</h3>
           <p>Our efficient logistics ensure that your order arrives quickly and in perfect condition, straight to your doorstep.</p>
         </div>

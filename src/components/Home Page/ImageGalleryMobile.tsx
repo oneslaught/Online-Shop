@@ -5,15 +5,15 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 import Slider from "react-slick";
 
-import bed from "../../assets/m_bed.jpg?as=webp";
-import besideTable from "../../assets/m_beside_table.jpg?as=webp";
-import chair from "../../assets/m_chair.jpg?as=webp";
-import closet from "../../assets/m_closet.jpg?as=webp";
-import fireplace from "../../assets/m_fireplace.jpg?as=webp";
-import tableLamp from "../../assets/m_lamp.jpg?as=webp";
-import mirror from "../../assets/m_mirror.jpg?as=webp";
-import sofa from "../../assets/m_sofa.jpg?as=webp";
-import table from "../../assets/m_table.jpg?as=webp";
+import bed from "../../assets/Home Page Images/m image gallery img/bed.jpg?as=webp";
+import besideTable from "../../assets/Home Page Images/m image gallery img/beside_table.jpg?as=webp";
+import chair from "../../assets/Home Page Images/m image gallery img/chair.jpg?as=webp";
+import closet from "../../assets/Home Page Images/m image gallery img/closet.jpg?as=webp";
+import fireplace from "../../assets/Home Page Images/m image gallery img/fireplace.jpg?as=webp";
+import tableLamp from "../../assets/Home Page Images/m image gallery img/lamp.jpg?as=webp";
+import mirror from "../../assets/Home Page Images/m image gallery img/mirror.jpg?as=webp";
+import sofa from "../../assets/Home Page Images/m image gallery img/sofa.jpg?as=webp";
+import table from "../../assets/Home Page Images/m image gallery img/table.jpg?as=webp";
 import * as styles from "../../styles/home styles/m_image_gallery.module.css";
 
 interface Product {

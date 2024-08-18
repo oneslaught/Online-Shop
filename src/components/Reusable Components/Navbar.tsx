@@ -16,8 +16,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import logoIcon from "../../assets/logoIcon.png?as=webp";
-import logoText from "../../assets/logoText.png?as=webp";
+import logoIcon from "../../assets/Reusable Images/logoIcon.png?as=webp";
+import logoText from "../../assets/Reusable Images/logoText.png?as=webp";
 import * as styles from "../../styles/navbar.module.css";
 import DisableDefaultDrag from "../../utils/DisableDefaultDrag";
 
