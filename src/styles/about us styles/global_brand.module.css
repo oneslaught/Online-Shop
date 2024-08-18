@@ -1,0 +1,38 @@
+.container {
+  padding: 20px;
+  background-color: #f4e7ff;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.text {
+  font-size: 1rem;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.description {
+  margin-top: 20px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-top: 20px;
+}
+
+.map {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+}
