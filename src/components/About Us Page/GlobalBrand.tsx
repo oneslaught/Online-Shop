@@ -1,34 +1,41 @@
 import React from "react";
 
+import wordlMap from "../../assets/About Us Page Images/global brand img/world_map.jpg?as=webp";
 import * as styles from "../../styles/about us styles/global_brand.module.css";
 
 export default function GlobalBrand() {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>A Global Brand</h2>
-      <p className={styles.text}>
-        With global headquarters and an extensive network of logistics hubs and customer service centers, we’re here to create that feeling
-        of home for everyone, anywhere.
-      </p>
-      <div className={styles.description}>
-        <h3 className={styles.subtitle}>Corporate Offices: Purple Pins</h3>
-        <p className={styles.text}>
-          Our corporate headquarters in Boston and Berlin are surrounded by world-class technology and educational institutions, providing
-          access to top talent.
-        </p>
-        <h3 className={styles.subtitle}>Fulfillment & Home Delivery Network: Yellow Pins</h3>
-        <p className={styles.text}>
-          We operate 18 fulfillment and 38 delivery centers representing millions of square feet across the U.S., Germany, Canada, and the
-          U.K.
-        </p>
-        <h3 className={styles.subtitle}>Sales & Service Centers: Green Pins</h3>
-        <p className={styles.text}>
-          Our Sales & Service teams in the U.S., Germany, Ireland, Canada, and the U.K. along with our virtual team allow us to meet the
-          needs of our global customer base.
-        </p>
-      </div>
-      <div className={styles.map}>
-        <img alt="Global Brand Map" className={styles.image} src="path_to_map_image" />
+      <div className={styles.content_container}>
+        <div className={styles.text_container}>
+          <h2 className={styles.title}>Lorem ipsum dolor sit.</h2>
+          <p className={styles.text}>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque beatae nulla eos perspiciatis voluptas ullam repellendus, fugit
+            sed dignissimos eaque exercitationem!
+          </p>
+          <div className={styles.description}>
+            <h3 className={styles.subtitle}>Lorem ipsum dolor sit amet consectetur.</h3>
+            <p className={styles.text}>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt dolore a sint. Eligendi pariatur, sunt quos saepe ipsam natus
+              enim placeat alias.
+            </p>
+            <h3 className={styles.subtitle}>Lorem ipsum dolor sit amet consectetur.</h3>
+            <p className={styles.text}>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit ex magnam, dolores corrupti doloremque rerum nulla optio
+              explicabo? Incidunt, suscipit.
+            </p>
+            <h3 className={styles.subtitle}>Lorem ipsum dolor sit amet consectetur.</h3>
+            <p className={styles.text}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod dolorum voluptatibus temporibus incidunt veniam sint
+              obcaecati est.
+            </p>
+          </div>
+        </div>
+        <div className={styles.image_container}>
+          <div className={styles.map}>
+            <img alt="Global Brand Map" className={styles.image} src={wordlMap} />
+          </div>
+        </div>
       </div>
     </div>
   );

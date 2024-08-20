@@ -1,6 +1,21 @@
 .container {
-  padding: 20px;
-  background-color: #f4e7ff;
+  padding: 90px;
+}
+
+.content_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.text_container {
+  flex: 1;
+  width: 100%;
+}
+
+.image_container {
+  flex: 2;
 }
 
 .title {
