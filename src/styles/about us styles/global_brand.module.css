@@ -1,53 +1,126 @@
 .container {
-  padding: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  background-color: #f7f7f0;
 }
 
-.content_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
+.svg_globe {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px 0;
 }
 
 .text_container {
-  flex: 1;
-  width: 100%;
-}
-
-.image_container {
   flex: 2;
+  max-width: 700px;
 }
 
-.title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #1a1a1a;
-}
-
-.text {
-  font-size: 1rem;
-  color: #4a4a4a;
-  margin-bottom: 20px;
-}
-
-.description {
-  margin-top: 20px;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #1a1a1a;
-  margin-top: 20px;
-}
-
-.map {
-  margin-top: 30px;
+.heading {
   text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 48px;
 }
 
-.image {
-  max-width: 100%;
-  height: auto;
-  border: 2px solid #ddd;
+.des {
+  color: #333;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.7px;
+}
+
+.des a {
+  text-decoration: none;
+  color: rgb(26, 143, 143);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s color;
+}
+
+.des a:hover {
+  color: rgb(18, 94, 94);
+}
+
+@media (max-width: 1408px) {
+  .text_container {
+    max-width: 600px;
+  }
+
+  .heading {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 1190px) {
+  .svg_globe {
+    max-width: 400px;
+  }
+
+  .heading {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 1052px) {
+  .svg_globe {
+    max-width: 350px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+
+  .des {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 940px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .text_container {
+    max-width: 700px;
+  }
+
+  .heading {
+    margin: 20px 0;
+  }
+
+  .svg_globe {
+    margin-top: 16px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 808px) {
+  .text_container {
+    max-width: 600px;
+  }
+
+  .heading {
+    font-size: 38px;
+  }
+
+  .svg_globe {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 690px) {
+  .text_container {
+    max-width: 500px;
+    padding: 0 36px;
+  }
+
+  .heading {
+    font-size: 36px;
+  }
+
+  .svg_globe {
+    max-width: 250px;
+  }
 }
