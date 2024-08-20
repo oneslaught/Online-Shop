@@ -76,8 +76,8 @@ export default function GlobalBrand() {
         </p>
         <p className={styles.des}>
           <Link to="/">Loxavi</Link> is easy to find in many different parts of the world, whether in busy cities or cozy suburbs. Our goal
-          in this area is to make furniture shopping easy and convenient, regardless of your location. We continue to expand our presence so
-          that you can always find your nearest store and create the home of your dreams.
+          in this area is to make furniture shopping easy and convenient, regardless of your location. We will continue to expand our
+          presence so that you can always find your nearest store and create the home of your dreams.
         </p>
       </div>
     </div>

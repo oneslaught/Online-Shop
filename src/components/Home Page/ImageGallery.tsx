@@ -39,7 +39,9 @@ const GalleryItem = ({ h, name, src, w }: GalleryProps) => (
     <Box className={styles.gallery_item}>
       <Box className={styles.image}>
         <img alt={name} src={src} />
-        <button className={styles.button}>{`Shop ${name}`}</button>
+        <button className={styles.button}>
+          <span>{`Shop ${name}`}</span>
+        </button>
       </Box>
     </Box>
   </Box>

@@ -80,6 +80,7 @@
 @media (max-width: 940px) {
   .container {
     flex-direction: column;
+    margin-top: 30px;
   }
 
   .text_container {
