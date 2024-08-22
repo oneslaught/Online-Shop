@@ -1,3 +1,4 @@
+import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import PersonIcon from "@mui/icons-material/Person";
@@ -13,13 +14,14 @@ import ListItemText from "@mui/material/ListItemText";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import { motion } from "framer-motion";
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import logoIcon from "../../assets/Reusable Images/logo_icon.png?as=webp";
 import logoText from "../../assets/Reusable Images/logo_text.png?as=webp";
 import * as styles from "../../styles/navbar.module.css";
 import DisableDefaultDrag from "../../utils/DisableDefaultDrag";
+import SidebarData from "./SIdebarData";
 
 export default function Navbar() {
   const location = useLocation();
@@ -31,6 +33,15 @@ export default function Navbar() {
     } else {
       navigate("/");
     }
+  };
+
+  const closeSideBarClick = () => {
+    navigate("#");
+  };
+
+  const [sidebar, setSidebar] = useState(false);
+  const showSidebar = () => {
+    setSidebar(!sidebar);
   };
 
   const dragRef = DisableDefaultDrag<HTMLDivElement>();
@@ -49,9 +60,29 @@ export default function Navbar() {
       <AppBar className={styles.navbar}>
         <Toolbar className={styles.toolbar}>
           {/* menu */}
-          <IconButton aria-haspopup="true" aria-label="show more" color="inherit" disableRipple>
+          <IconButton aria-haspopup="true" aria-label="show more" color="inherit" disableRipple onClick={showSidebar}>
             <MenuRoundedIcon className={`${styles.icon} ${styles.menu_icon}`} />
           </IconButton>
+          <nav className={sidebar ? `${styles.nav_menu} ${styles.active}` : styles.nav_menu}>
+            <ul className={styles.nav_menu_items} onClick={showSidebar}>
+              <div className={styles.close_icon_container}>
+                <img aria-label="sidebar logo text" className={styles.logo_text} onClick={handleHomePageClick} src={logoText} />
+                <CloseIcon className={styles.close_icon} onClick={closeSideBarClick} />
+              </div>
+              {SidebarData.map((item, index) => {
+                const itemClassName = item.title === "Login" ? `${styles[item.cName]} ${styles.login_link}` : styles[item.cName];
+
+                return (
+                  <li className={itemClassName} key={index}>
+                    <Link to={item.path}>
+                      {item.icon}
+                      <span className={styles.title}>{item.title}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
 
           {/* logo */}
           <Box className={styles.logo_container}>

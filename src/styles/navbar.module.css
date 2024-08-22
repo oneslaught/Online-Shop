@@ -31,6 +31,11 @@
   cursor: pointer;
 }
 
+.logo_text[aria-label="sidebar logo text"] {
+  width: 140px;
+  margin-left: 8px;
+}
+
 .list_container {
   margin: 0 auto;
   display: flex;
@@ -95,10 +100,90 @@
 
 .cart_icon,
 .profile_icon,
-.search_icon,
-.menu_icon {
+.search_icon {
   font-size: 30px !important;
   color: rgb(78 76 74);
+}
+
+.menu_icon {
+  font-size: 40px !important;
+}
+
+.nav_menu {
+  background-color: #ffffff;
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav_menu.active {
+  left: 0;
+  transition: 450ms;
+}
+
+.nav_text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 8px;
+  list-style: none;
+  height: 40px;
+}
+
+.nav_text a {
+  text-decoration: none;
+  color: #151414;
+  font-size: 18px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 4px;
+  transition: 0.2s color, 0.2s background-color;
+}
+
+.nav_text a:hover {
+  background-color: rgb(18, 102, 102);
+  color: #fff;
+}
+
+.nav_menu_items {
+  width: 100%;
+  padding: 0;
+}
+
+.close_icon_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close_icon {
+  cursor: pointer;
+  font-size: 40px !important;
+  color: #3e4143;
+  margin-right: 8px;
+}
+
+.title {
+  margin-left: 16px;
+}
+
+.login_link {
+  background-color: rgb(5, 134, 134);
+  padding-bottom: 20rem;
+  padding-top: 3rem; 
+  margin-top: 2rem;
+}
+
+.login_link a {
+  color: #fff;
 }
 
 @media (max-width: 1408px) {

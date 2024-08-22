@@ -1,7 +1,5 @@
 import * as React from "react";
 
-import ContactUs from "../Reusable Components/ContactUs";
-import Navbar from "../Reusable Components/Navbar";
 import FurnitureCategories from "./FurnitureCategories";
 import FurnitureExpirience from "./FurnitureExperience";
 import ImageGallery from "./ImageGallery";
@@ -13,7 +11,6 @@ import Slider from "./Slider";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Slider />
       <OnSale />
       <LearnMore />
@@ -21,7 +18,6 @@ export default function Home() {
       <FurnitureCategories />
       <FurnitureExpirience />
       <ImageGallery />
-      <ContactUs />
     </>
   );
 }
