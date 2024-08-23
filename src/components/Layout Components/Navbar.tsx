@@ -29,10 +29,18 @@ export default function Navbar() {
 
   const handleHomePageClick = () => {
     if (location.pathname === "/") {
-      window.location.reload();
+      window.scrollTo(0, 0);
     } else {
       navigate("/");
     }
+  };
+
+  const [openSubRoutes, setOpenSubRoutes] = useState({});
+  const toggleSubRoutes = (index) => {
+    setOpenSubRoutes((prevOpenSubRoutes) => ({
+      ...prevOpenSubRoutes,
+      [index]: !prevOpenSubRoutes[index],
+    }));
   };
 
   const closeSideBarClick = () => {
@@ -40,7 +48,7 @@ export default function Navbar() {
   };
 
   const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => {
+  const changeSidebarVisibility = () => {
     setSidebar(!sidebar);
   };
 
@@ -60,25 +68,45 @@ export default function Navbar() {
       <AppBar className={styles.navbar}>
         <Toolbar className={styles.toolbar}>
           {/* menu */}
-          <IconButton aria-haspopup="true" aria-label="show more" color="inherit" disableRipple onClick={showSidebar}>
+          <IconButton aria-haspopup="true" aria-label="show more" color="inherit" disableRipple onClick={changeSidebarVisibility}>
             <MenuRoundedIcon className={`${styles.icon} ${styles.menu_icon}`} />
           </IconButton>
+          {sidebar && <div className={styles.overlay} onClick={changeSidebarVisibility}></div>}
           <nav className={sidebar ? `${styles.nav_menu} ${styles.active}` : styles.nav_menu}>
-            <ul className={styles.nav_menu_items} onClick={showSidebar}>
+            <ul className={styles.nav_menu_items}>
               <div className={styles.close_icon_container}>
                 <img aria-label="sidebar logo text" className={styles.logo_text} onClick={handleHomePageClick} src={logoText} />
                 <CloseIcon className={styles.close_icon} onClick={closeSideBarClick} />
               </div>
               {SidebarData.map((item, index) => {
-                const itemClassName = item.title === "Login" ? `${styles[item.cName]} ${styles.login_link}` : styles[item.cName];
+                const itemClassName = item.title === "Login" ? `${styles[item.name]} ${styles.login_link}` : styles[item.name];
 
                 return (
-                  <li className={itemClassName} key={index}>
-                    <Link to={item.path}>
-                      {item.icon}
-                      <span className={styles.title}>{item.title}</span>
-                    </Link>
-                  </li>
+                  <React.Fragment key={index}>
+                    <li
+                      className={itemClassName}
+                      onClick={() => {
+                        toggleSubRoutes(index);
+                      }}
+                    >
+                      <Link to={item.path}>
+                        {item.icon}
+                        <span className={styles.title}>{item.title}</span>
+                      </Link>
+                    </li>
+                    {openSubRoutes[index] && item.subRoutes && (
+                      <ul className={styles.sub_menu}>
+                        {item.subRoutes.map((subItem, subIndex) => (
+                          <li className={styles.sub_menu_item} key={subIndex}>
+                            <Link to={subItem.path}>
+                              {subItem.icon}
+                              <span className={styles.title}>{subItem.title}</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </React.Fragment>
                 );
               })}
             </ul>
