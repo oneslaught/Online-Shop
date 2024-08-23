@@ -32,7 +32,7 @@
 }
 
 .logo_text[aria-label="sidebar logo text"] {
-  width: 140px;
+  width: 180px;
   margin-left: 8px;
 }
 
@@ -105,7 +105,8 @@
   color: rgb(78 76 74);
 }
 
-.menu_icon {
+.menu_icon,
+.login_icon {
   font-size: 40px !important;
 }
 
@@ -120,11 +121,14 @@
 }
 
 .nav_menu {
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: #ffffff;
   width: 350px;
   height: 100vh;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   position: fixed;
   top: 0;
   left: -100%;
@@ -137,29 +141,38 @@
   transition: 450ms;
 }
 
-.nav_text {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 8px 8px;
-  list-style: none;
+.nav_link {
   height: 40px;
 }
 
-.nav_text a {
-  width: 100%;
+.nav_link,
+.sub_link {
+  padding: 8px 8px;
+  list-style: none;
+}
+
+.nav_link a {
+  font-size: 20px;
+  padding: 0 16px;
+}
+
+.sub_link a {
+  font-size: 18px;
+  padding: 0;
+}
+
+.nav_link a,
+.sub_link a {
   height: 100%;
   text-decoration: none;
   color: #151414;
-  font-size: 20px;
   display: flex;
   align-items: center;
-  padding: 0 16px;
   border-radius: 4px;
   transition: 0.2s color, 0.2s background-color;
 }
 
-.nav_text a:hover {
+.nav_link a:hover {
   background-color: rgb(18, 102, 102);
   color: #fff;
 }
@@ -179,22 +192,43 @@
   cursor: pointer;
   font-size: 40px !important;
   color: #3e4143;
-  margin-right: 8px;
+  margin-right: 12px;
 }
 
 .title {
+  margin-left: 8px;
+}
+
+.sub_title {
   margin-left: 16px;
 }
 
-.login_link {
-  background-color: rgb(5, 134, 134);
-  padding-bottom: 20rem;
-  padding-top: 3rem; 
+.login_container {
+  padding-top: 1rem; 
   margin-top: 2rem;
+  padding-bottom: 3rem;
+  height: 100%;
+  background-color: rgb(5, 134, 134);
 }
 
-.login_link a {
+.login_container a {
+  height: 60px;
+  margin: 0 16px;
+  border-radius: 6px;
   color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: 0.2s background-color;
+}
+
+.login_container a:hover {
+  background-color: rgb(18, 102, 102);
+}
+
+.expand_container {
+  margin-left: auto;
 }
 
 @media (max-width: 1408px) {
@@ -259,6 +293,22 @@
   .search_icon {
     margin: 0;
   }
+
+  .nav_menu {
+    width: 300px;
+  }
+
+  .logo_text[aria-label="sidebar logo text"] {
+    width: 160px;
+  }
+
+  .login_icon {
+    font-size: 30px !important;
+  }
+
+  .login_container a {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 608px) {
@@ -274,5 +324,13 @@
 
   .search_icon {
     font-size: 26px !important;
+  }
+
+  .nav_menu {
+    width: 100%;
+  }
+
+  .close_icon {
+    font-size: 36px !important;
   }
 }

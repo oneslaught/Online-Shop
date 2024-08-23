@@ -1,5 +1,7 @@
 import CloseIcon from "@mui/icons-material/Close";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
+import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
@@ -35,16 +37,13 @@ export default function Navbar() {
     }
   };
 
-  const [openSubRoutes, setOpenSubRoutes] = useState({});
-  const toggleSubRoutes = (index) => {
-    setOpenSubRoutes((prevOpenSubRoutes) => ({
-      ...prevOpenSubRoutes,
-      [index]: !prevOpenSubRoutes[index],
-    }));
-  };
-
-  const closeSideBarClick = () => {
-    navigate("#");
+  const [activeIndex, setActiveIndex] = useState<null | number>(null);
+  const toggleSubRoutes = (index: number): void => {
+    if (activeIndex === index) {
+      setActiveIndex(null);
+    } else {
+      setActiveIndex(index);
+    }
   };
 
   const [sidebar, setSidebar] = useState(false);
@@ -67,7 +66,7 @@ export default function Navbar() {
     <Box className={styles.navbar_container} ref={dragRef}>
       <AppBar className={styles.navbar}>
         <Toolbar className={styles.toolbar}>
-          {/* menu */}
+          {/* sidebar */}
           <IconButton aria-haspopup="true" aria-label="show more" color="inherit" disableRipple onClick={changeSidebarVisibility}>
             <MenuRoundedIcon className={`${styles.icon} ${styles.menu_icon}`} />
           </IconButton>
@@ -76,33 +75,52 @@ export default function Navbar() {
             <ul className={styles.nav_menu_items}>
               <div className={styles.close_icon_container}>
                 <img aria-label="sidebar logo text" className={styles.logo_text} onClick={handleHomePageClick} src={logoText} />
-                <CloseIcon className={styles.close_icon} onClick={closeSideBarClick} />
+                <CloseIcon className={styles.close_icon} onClick={changeSidebarVisibility} />
               </div>
               {SidebarData.map((item, index) => {
-                const itemClassName = item.title === "Login" ? `${styles[item.name]} ${styles.login_link}` : styles[item.name];
+                const isActive = activeIndex === index;
 
                 return (
                   <React.Fragment key={index}>
                     <li
-                      className={itemClassName}
+                      className={styles[item.name]}
                       onClick={() => {
                         toggleSubRoutes(index);
+                        if (!item.subRoutes || item.subRoutes.length === 0) {
+                          changeSidebarVisibility();
+                        }
                       }}
                     >
                       <Link to={item.path}>
                         {item.icon}
                         <span className={styles.title}>{item.title}</span>
+                        {item.subRoutes && item.subRoutes.length > 0 && (
+                          <motion.div
+                            animate={{ rotate: isActive ? 180 : 0 }}
+                            className={styles.expand_container}
+                            initial={{ rotate: 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <ExpandMoreRoundedIcon />
+                          </motion.div>
+                        )}
                       </Link>
                     </li>
-                    {openSubRoutes[index] && item.subRoutes && (
+                    {isActive && item.subRoutes && (
                       <ul className={styles.sub_menu}>
                         {item.subRoutes.map((subItem, subIndex) => (
-                          <li className={styles.sub_menu_item} key={subIndex}>
-                            <Link to={subItem.path}>
-                              {subItem.icon}
-                              <span className={styles.title}>{subItem.title}</span>
+                          <motion.li
+                            className={styles[subItem.name]}
+                            initial={{ x: 0 }}
+                            key={subIndex}
+                            whileHover={{ transition: { duration: 0.2 }, x: 8 }}
+                          >
+                            <Link onClick={changeSidebarVisibility} to={subItem.path}>
+                              <motion.span className={styles.sub_title} whileHover={{ color: "rgb(5, 134, 134)" }}>
+                                {subItem.title}
+                              </motion.span>
                             </Link>
-                          </li>
+                          </motion.li>
                         ))}
                       </ul>
                     )}
@@ -110,6 +128,12 @@ export default function Navbar() {
                 );
               })}
             </ul>
+            <div className={styles.login_container} onClick={changeSidebarVisibility}>
+              <Link to="#">
+                <LoginOutlinedIcon className={styles.login_icon} />
+                <span className={styles.title}>Login</span>
+              </Link>
+            </div>
           </nav>
 
           {/* logo */}

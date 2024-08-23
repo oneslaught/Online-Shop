@@ -1,54 +1,50 @@
 import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
-import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
-import ChairAltOutlinedIcon from "@mui/icons-material/ChairAltOutlined";
-import ChairOutlinedIcon from "@mui/icons-material/ChairOutlined";
-import DeckOutlinedIcon from "@mui/icons-material/DeckOutlined";
+import BathroomOutlinedIcon from "@mui/icons-material/BathroomOutlined";
+import BedroomParentOutlinedIcon from "@mui/icons-material/BedroomParentOutlined";
+import DiningOutlinedIcon from "@mui/icons-material/DiningOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import KingBedOutlinedIcon from "@mui/icons-material/KingBedOutlined";
-import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
+import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
+import LivingOutlinedIcon from "@mui/icons-material/LivingOutlined";
 import LoyaltyOutlinedIcon from "@mui/icons-material/LoyaltyOutlined";
-import TableRestaurantOutlinedIcon from "@mui/icons-material/TableRestaurantOutlined";
+import YardOutlinedIcon from "@mui/icons-material/YardOutlined";
 import React from "react";
 
 export const SidebarData = [
   {
     icon: <HomeOutlinedIcon />,
-    name: "nav_text",
+    name: "nav_link",
     path: "/",
     title: "Home",
   },
   {
     icon: <AutoAwesomeOutlinedIcon />,
-    name: "nav_text",
-    path: "/about-us",
+    name: "nav_link",
+    path: "/",
     title: "New",
   },
   {
     icon: <LoyaltyOutlinedIcon />,
-    name: "nav_text",
+    name: "nav_link",
     path: "/",
     title: "Sale",
   },
   {
-    icon: <DeckOutlinedIcon />,
-    name: "nav_text",
-    path: "/",
+    icon: <YardOutlinedIcon />,
+    name: "nav_link",
+    path: "#",
     subRoutes: [
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Dining Chairs",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Dining Tables",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Coffee Tables",
       },
@@ -56,25 +52,22 @@ export const SidebarData = [
     title: "Outdoor",
   },
   {
-    icon: <ChairOutlinedIcon />,
-    name: "nav_text",
-    path: "/",
+    icon: <LivingOutlinedIcon />,
+    name: "nav_link",
+    path: "#",
     subRoutes: [
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Sofas & Sectionals",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Shelving & Bookcases",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Accent Chairs",
       },
@@ -82,51 +75,45 @@ export const SidebarData = [
     title: "Living",
   },
   {
-    icon: <TableRestaurantOutlinedIcon />,
-    name: "nav_text",
-    path: "/",
+    icon: <DiningOutlinedIcon />,
+    name: "nav_link",
+    path: "#",
     subRoutes: [
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Dining Tables",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Dining Chairs",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
-        title: "Trays",
+        title: "Bar Carts",
       },
     ],
     title: "Dining",
   },
   {
-    icon: <KingBedOutlinedIcon />,
-    name: "nav_text",
-    path: "/",
+    icon: <BedroomParentOutlinedIcon />,
+    name: "nav_link",
+    path: "#",
     subRoutes: [
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Beds",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Mattrasses",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Nightstands",
       },
@@ -134,25 +121,22 @@ export const SidebarData = [
     title: "Bedroom",
   },
   {
-    icon: <ChairAltOutlinedIcon />,
-    name: "nav_text",
-    path: "/",
+    icon: <InsertChartOutlinedIcon />,
+    name: "nav_link",
+    path: "#",
     subRoutes: [
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Chairs",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Desks",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Wall Shelves",
       },
@@ -160,30 +144,27 @@ export const SidebarData = [
     title: "Office",
   },
   {
-    icon: <BathtubOutlinedIcon />,
-    name: "nav_text",
-    path: "/",
+    icon: <BathroomOutlinedIcon />,
+    name: "nav_link",
+    path: "#",
     subRoutes: [
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
         title: "Bathtubs",
       },
       {
-        icon: <DeckOutlinedIcon />,
-        name: "nav_text",
+        name: "sub_link",
         path: "/",
-        title: "Rugs",
+        title: "Showers",
+      },
+      {
+        name: "sub_link",
+        path: "/",
+        title: "Sinks",
       },
     ],
     title: "Bathroom",
-  },
-  {
-    icon: <LoginOutlinedIcon />,
-    name: "nav_text",
-    path: "/",
-    title: "Login",
   },
 ];
 
