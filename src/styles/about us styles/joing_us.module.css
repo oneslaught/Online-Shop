@@ -21,9 +21,11 @@
 
 .content {
   padding: 5rem 1.5rem;
+  width: 90vw;
 }
 
 .content_text {
+  position: relative;
   text-align: center;
   font-weight: 400;
   color: #fff;
@@ -74,7 +76,7 @@
   width: 100%;
   height: 100%;
   background-color: rgb(26, 143, 143);
-  transition: transform 0.5s;
+  transition: transform 0.8s;
   transform-origin: 0 0;
   transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
   transform: scaleX(0);
@@ -82,4 +84,72 @@
 
 .content_btn:hover::before {
   transform: scaleX(1);
+}
+
+@media (max-width: 1570px) {
+  .content_text {
+    font-size: 66px;
+  }
+}
+
+@media (max-width: 1490px) {
+  .content_text {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 1370px) {
+  .content_text {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .image {
+    height: 74vh;
+  }
+
+  .content_text {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 999px) {
+  .image {
+    height: 66vh;
+  }
+}
+
+@media (max-width: 808px) {
+  .image {
+    height: 56vh;
+  }
+
+  .content_text {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 690px) {
+  .image {
+    height: 50vh;
+  }
+
+  .content_text {
+    font-size: 40px;
+  }
+
+  .content_btn {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content_text {
+    font-size: 38px;
+  }
+
+  .content_btn {
+    max-width: 200px;
+  }
 }
