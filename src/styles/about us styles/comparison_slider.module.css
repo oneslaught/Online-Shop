@@ -30,26 +30,62 @@
   outline: none;
 }
 
-:global(.slick-track) {
+.overlay_text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.slider_control_panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav_button {
+  background-color: #ddd;
+  border: none;
+  margin: 0 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.nav_button:hover,
+.arrow_button:hover {
+  background-color: #ccc;
+}
+
+
+.comparison_slider :global(.slick-track) {
   display: flex;
   align-items: center;
   transform: translate3d(0px, 0px, 0px);
 }
 
-:global(.slick-slide) {
+.comparison_slider :global(.slick-slide) {
   transform: scale(0.7);
   transition: all 0.4s ease-in-out;
   padding: 40px 0;
 }
 
-:global(.slick-center) {
+.comparison_slider :global(.slick-center) {
   transform: scale(1.2);
 }
 
-:global(.slick-slide.slick-center) {
+.comparison_slider :global(.slick-slide.slick-center) {
   opacity: 1;
 }
 
-:global(.slick-slide:not(.slick-center)) {
+.comparison_slider :global(.slick-slide:not(.slick-center)) {
   opacity: 0.5;
 }

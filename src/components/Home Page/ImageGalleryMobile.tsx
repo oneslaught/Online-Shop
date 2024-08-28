@@ -68,16 +68,18 @@ export default function OnSale() {
       <Typography className={styles.header} variant="h2">
         Dive into a sea of design diversity
       </Typography>
-      <Slider {...settings} className={styles.product_container}>
-        {products.map((product) => (
-          <Box className={styles.product_card} key={product.name}>
-            <Box className={styles.product_image}>
-              <img alt={product.name} className={styles.product_thumb} src={product.image} />
-              <button className={styles.card_btn}>{`Shop ${product.name}`}</button>
+      <div className={styles.image_gallery_slider}>
+        <Slider {...settings} className={styles.product_container}>
+          {products.map((product) => (
+            <Box className={styles.product_card} key={product.name}>
+              <Box className={styles.product_image}>
+                <img alt={product.name} className={styles.product_thumb} src={product.image} />
+                <button className={styles.card_btn}>{`Shop ${product.name}`}</button>
+              </Box>
             </Box>
-          </Box>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
     </Box>
   );
 }

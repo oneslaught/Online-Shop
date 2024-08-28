@@ -170,34 +170,36 @@ export default function OnSale() {
       <Typography className={styles.product_header} variant="h2">
         On Sale
       </Typography>
-      <Slider {...settings} className={styles.product_container}>
-        {products.map((product) => (
-          <Box className={styles.product_card} key={product.name}>
-            <Box className={styles.product_image}>
-              <Box className={styles.discount_tag} component="span">
-                {product.discount}
+      <div className={styles.on_sale_slider}>
+        <Slider {...settings} className={styles.product_container}>
+          {products.map((product) => (
+            <Box className={styles.product_card} key={product.name}>
+              <Box className={styles.product_image}>
+                <Box className={styles.discount_tag} component="span">
+                  {product.discount}
+                </Box>
+                <img alt={product.name} className={styles.product_thumb} src={product.image} />
+                <button className={styles.card_btn}>add to cart</button>
               </Box>
-              <img alt={product.name} className={styles.product_thumb} src={product.image} />
-              <button className={styles.card_btn}>add to cart</button>
+              <Box className={styles.product_info}>
+                <button className={`${styles.card_btn} ${styles.card_btn_mobile}`}>add to cart</button>
+                <Typography className={styles.product_brand} variant="h4">
+                  {product.name}
+                </Typography>
+                <Typography className={styles.product_des} paragraph>
+                  {product.description}
+                </Typography>
+                <Box className={styles.price} component="span">
+                  {product.price}$
+                </Box>
+                <Box className={styles.actual_price} component="span">
+                  {product.actualPrice}$
+                </Box>
+              </Box>
             </Box>
-            <Box className={styles.product_info}>
-              <button className={`${styles.card_btn} ${styles.card_btn_mobile}`}>add to cart</button>
-              <Typography className={styles.product_brand} variant="h4">
-                {product.name}
-              </Typography>
-              <Typography className={styles.product_des} paragraph>
-                {product.description}
-              </Typography>
-              <Box className={styles.price} component="span">
-                {product.price}$
-              </Box>
-              <Box className={styles.actual_price} component="span">
-                {product.actualPrice}$
-              </Box>
-            </Box>
-          </Box>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
     </Box>
   );
 }
