@@ -4,6 +4,7 @@ import ArrowForwardOutlinedIcon from "@mui/icons-material/ArrowForwardOutlined";
 import ChairAltOutlinedIcon from "@mui/icons-material/ChairAltOutlined";
 import ChairOutlinedIcon from "@mui/icons-material/ChairOutlined";
 import DeskOutlinedIcon from "@mui/icons-material/DeskOutlined";
+import EventSeatOutlinedIcon from "@mui/icons-material/EventSeatOutlined";
 import KingBedOutlinedIcon from "@mui/icons-material/KingBedOutlined";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
 import NavigateNextRoundedIcon from "@mui/icons-material/NavigateNextRounded";
@@ -11,6 +12,7 @@ import TableRestaurantOutlinedIcon from "@mui/icons-material/TableRestaurantOutl
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 
+import armrestsOfficeChair from "../../assets/About Us Page Images/comparison slider img/armrests_office_chair.jpg?as=webp";
 import bed from "../../assets/About Us Page Images/comparison slider img/bed.jpg?as=webp";
 import graySofa from "../../assets/About Us Page Images/comparison slider img/biege_sofa.jpg?as=webp";
 import cafeTable from "../../assets/About Us Page Images/comparison slider img/cafe_table.jpg?as=webp";
@@ -18,6 +20,7 @@ import coffeeTable from "../../assets/About Us Page Images/comparison slider img
 import desk from "../../assets/About Us Page Images/comparison slider img/desk.jpg?as=webp";
 import blackChair from "../../assets/About Us Page Images/comparison slider img/gray_chair.jpg?as=webp";
 import biegeSofa from "../../assets/About Us Page Images/comparison slider img/grey_sofa.jpg?as=webp";
+import officeChair from "../../assets/About Us Page Images/comparison slider img/office_chair.jpg?as=webp";
 import redChair from "../../assets/About Us Page Images/comparison slider img/red_chair.jpg?as=webp";
 import storageBed from "../../assets/About Us Page Images/comparison slider img/storage_bed.jpg?as=webp";
 import storageDesk from "../../assets/About Us Page Images/comparison slider img/storage_desk.jpg?as=webp";
@@ -25,13 +28,19 @@ import * as styles from "../../styles/about us styles/comparison_slider.module.c
 
 export default function ComparisonSlider() {
   const sliderRef = useRef<Slider>(null);
-  const [overlayVisible, setOverlayVisible] = useState(true);
+  const [clueVisible, setClueVisible] = useState(true);
+  const [activeSlide, setActiveSlide] = useState(1);
 
-  const handleMouseDown = () => {
-    setOverlayVisible(false);
+  const handleAfterChange = (current: number) => {
+    setActiveSlide(current);
+  };
+
+  const hideClue = () => {
+    setClueVisible(false);
   };
 
   const settings = {
+    afterChange: handleAfterChange,
     arrows: false,
     centerMode: true,
     centerPadding: "0",
@@ -40,7 +49,18 @@ export default function ComparisonSlider() {
     focusOnSelect: true,
     infinite: true,
     initialSlide: 1,
-    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 808,
+        settings: {
+          centerMode: false,
+          slidesToScroll: 1,
+          slidesToShow: 1,
+          speed: 400,
+        },
+      },
+    ],
+    slidesToScroll: 1,
     slidesToShow: 3,
     speed: 300,
     swipe: false,
@@ -48,11 +68,12 @@ export default function ComparisonSlider() {
   };
 
   const images = [
-    { first: graySofa, icon: <ChairOutlinedIcon className={styles.nav_icon} />, second: biegeSofa },
-    { first: blackChair, icon: <ChairAltOutlinedIcon className={styles.nav_icon} />, second: redChair },
-    { first: desk, icon: <DeskOutlinedIcon className={styles.nav_icon} />, second: storageDesk },
-    { first: bed, icon: <KingBedOutlinedIcon className={styles.nav_icon} />, second: storageBed },
-    { first: cafeTable, icon: <TableRestaurantOutlinedIcon className={styles.nav_icon} />, second: coffeeTable },
+    { first: graySofa, icon: <ChairOutlinedIcon />, second: biegeSofa },
+    { first: blackChair, icon: <ChairAltOutlinedIcon />, second: redChair },
+    { first: desk, icon: <DeskOutlinedIcon />, second: storageDesk },
+    { first: bed, icon: <KingBedOutlinedIcon />, second: storageBed },
+    { first: cafeTable, icon: <TableRestaurantOutlinedIcon />, second: coffeeTable },
+    { first: officeChair, icon: <EventSeatOutlinedIcon />, second: armrestsOfficeChair },
   ];
 
   const goToSlide = (index: number) => {
@@ -69,49 +90,49 @@ export default function ComparisonSlider() {
 
   return (
     <>
-      <div className={styles.header_container}>
-        <h2 className={styles.header}>Your style, your choices, your space</h2>
-        <p className={styles.des}>Create a space that reflects your individuality. Loxavi is furniture designed especially for you.</p>
+      <div className={styles.nav_container}>
+        <div className={styles.header_container}>
+          <h2 className={styles.header}>Your style, Your choices, Your space</h2>
+          <p className={styles.des}>Create a space that reflects your individuality. Loxavi is furniture designed especially for You.</p>
+        </div>
+
+        <div className={styles.slider_control_panel}>
+          <NavigateBeforeOutlinedIcon className={styles.nav_arrow_before} onClick={prevSlide} />
+          {images.map((imagePair, index) => {
+            const IconComponent = imagePair.icon.type as React.ElementType;
+
+            return (
+              <IconComponent
+                className={`${styles.nav_icon} ${index === activeSlide ? styles.active_icon : ""}`}
+                key={index}
+                onClick={() => {
+                  goToSlide(index);
+                }}
+              />
+            );
+          })}
+          <NavigateNextRoundedIcon className={styles.nav_arrow_next} onClick={nextSlide} />
+        </div>
       </div>
 
-      <div className={styles.slider_control_panel}>
-        <NavigateBeforeOutlinedIcon className={styles.nav_arrow} onClick={prevSlide} />
-        {images.map((imagePair, index) => (
-          <div
-            className={styles.nav_icon}
-            key={index}
-            onClick={() => {
-              goToSlide(index);
-            }}
-          >
-            {imagePair.icon}
-          </div>
-        ))}
-        <NavigateNextRoundedIcon className={styles.nav_arrow} onClick={nextSlide} />
-      </div>
-
-      <div className={styles.comparison_slider} onMouseDown={handleMouseDown}>
+      <div className={styles.comparison_slider} onContextMenu={hideClue} onMouseDown={hideClue} onTouchStart={hideClue}>
         <Slider {...settings} ref={sliderRef}>
           {images.map((imagePair, index) => (
-            <div
-              className={styles.slider_item}
-              key={index}
-              onMouseDown={(event) => {
-                if (event.button === 2) event.stopPropagation();
-              }}
-            >
+            <div className={styles.slider_item} key={index}>
               <ImgComparisonSlider className={styles.image_container}>
                 <img className={styles.image} slot="first" src={imagePair.first} />
                 <img className={styles.image} slot="second" src={imagePair.second} />
               </ImgComparisonSlider>
-              <div className={`${styles.overlay_text} ${!overlayVisible ? styles.hidden : ""}`}>
-                <ArrowBackOutlinedIcon />
-                Drag to explore
-                <ArrowForwardOutlinedIcon />
-              </div>
             </div>
           ))}
         </Slider>
+        <div className={styles.clue_text_container}>
+          <div className={`${styles.clue_text} ${!clueVisible ? styles.hidden : ""}`}>
+            <ArrowBackOutlinedIcon className={styles.arrow_back} />
+            <span>Drag to explore</span>
+            <ArrowForwardOutlinedIcon className={styles.arrow_forward} />
+          </div>
+        </div>
       </div>
     </>
   );
