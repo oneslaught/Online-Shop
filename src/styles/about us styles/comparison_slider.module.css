@@ -3,7 +3,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 40px 0;
+  margin: 40px 0 20px;
 }
 
 .header {
@@ -26,13 +26,16 @@
   max-width: 800px;
 }
 
-.slider_item {
+.image_container:focus {
   outline: none;
 }
 
 .overlay_text {
+  display: flex;
+  align-items: center;
+  opacity: 1;
   position: absolute;
-  bottom: 10px;
+  bottom: 40%;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.5);
@@ -42,29 +45,31 @@
   font-size: 12px;
   z-index: 10;
   pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 .slider_control_panel {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
-.nav_button {
-  background-color: #ddd;
-  border: none;
-  margin: 0 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
+.nav_arrow,
+.nav_icon {
+  font-size: 60px !important;
 }
 
-.nav_button:hover,
-.arrow_button:hover {
-  background-color: #ccc;
+.nav_icon {
+  margin: 0 10px;
+  background-color: #eaeae2;
+  border-radius: 50%;
+  padding: 4px;
 }
-
 
 .comparison_slider :global(.slick-track) {
   display: flex;
