@@ -5,6 +5,7 @@ import AboutUsPage from "./components/About Us Page/AboutUsPage";
 import HomePage from "./components/Home Page/HomePage";
 import ContactUs from "./components/Layout Components/ContactUs";
 import Navbar from "./components/Layout Components/Navbar";
+import SalePage from "./components/Sale Page/SalePage";
 import "./styles/app.css";
 import ScrollToTop from "./utils/RouteScrollToTop";
 
@@ -17,6 +18,7 @@ export default function App() {
         <Routes>
           <Route element={<HomePage />} index />
           <Route element={<AboutUsPage />} path="/about-us" />
+          <Route element={<SalePage />} path="/sale" />
         </Routes>
         <ContactUs />
       </BrowserRouter>

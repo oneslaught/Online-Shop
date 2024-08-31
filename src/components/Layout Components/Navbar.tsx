@@ -21,7 +21,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import logoIcon from "../../assets/Reusable Images/logo_icon.png?as=webp";
 import logoText from "../../assets/Reusable Images/logo_text.png?as=webp";
-import * as styles from "../../styles/navbar.module.css";
+import * as styles from "../../styles/layout styles/navbar.module.css";
 import DisableDefaultDrag from "../../utils/DisableDefaultDrag";
 import SidebarData from "./SIdebarData";
 
@@ -91,9 +91,9 @@ export default function Navbar() {
                         }
                       }}
                     >
-                      <Link to={item.path}>
-                        {item.icon}
-                        <span className={styles.title}>{item.title}</span>
+                      <Link className={`${item.title === "Sale" ? styles.sale_link : ""}`} to={item.path}>
+                        {item.title === "Sale" ? <span className={styles.sale}>{item.icon}</span> : item.icon}
+                        <span className={`${styles.title} ${item.title === "Sale" ? styles.sale : ""}`}>{item.title}</span>
                         {item.subRoutes && item.subRoutes.length > 0 && (
                           <motion.div
                             animate={{ rotate: isActive ? 180 : 0 }}

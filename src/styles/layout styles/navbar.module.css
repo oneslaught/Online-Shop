@@ -3,6 +3,8 @@
 }
 
 .navbar {
+  left: 0 !important;
+  width: 100vw !important;
   box-shadow: none !important;
 }
 
@@ -204,6 +206,10 @@
   margin-left: 16px;
 }
 
+.sale {
+  color: rgb(187, 19, 19);
+}
+
 .login_container {
   padding-top: 1rem; 
   margin-top: 2rem;
@@ -224,9 +230,17 @@
   transition: 0.2s background-color;
 }
 
+/* хрен ли не работает? по приколу */
+
 .login_container a:hover {
   background-color: rgb(18, 102, 102);
 }
+
+.login_container .sale_link:hover {
+  background-color: #151414 !important;
+}
+
+/*                                */
 
 .expand_container {
   margin-left: auto;
