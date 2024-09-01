@@ -11,14 +11,16 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { MouseEvent, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
+import dinningSet from "../../assets/Home Page Images/on sale img/dining_table_set.jpg?as=webp";
 import logoIcon from "../../assets/Reusable Images/logo_icon.png?as=webp";
 import logoText from "../../assets/Reusable Images/logo_text.png?as=webp";
 import * as styles from "../../styles/layout styles/navbar.module.css";
@@ -35,6 +37,19 @@ export default function Navbar() {
     } else {
       navigate("/");
     }
+  };
+
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+  const [openSubmenu, setOpenSubmenu] = useState<null | number>(null);
+
+  const handleMouseEnter = (event: MouseEvent<HTMLElement>, index: number): void => {
+    setAnchorEl(event.currentTarget);
+    setOpenSubmenu(index);
+  };
+
+  const handleMouseLeave = () => {
+    setAnchorEl(null);
+    setOpenSubmenu(null);
   };
 
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
@@ -54,12 +69,70 @@ export default function Navbar() {
   const dragRef = DisableDefaultDrag<HTMLDivElement>();
 
   const menuItems = [
-    { text: "Outdoor" },
-    { text: "Living" },
-    { text: "Dining" },
-    { text: "Bedroom" },
-    { text: "Office" },
-    { text: "Bathroom" },
+    {
+      submenu: [
+        { imgSrc: dinningSet, text: "Patio Furniture" },
+        { imgSrc: dinningSet, text: "Outdoor Lighting" },
+        { imgSrc: dinningSet, text: "Garden Decor" },
+        { text: "Grills & Outdoor Cooking" },
+        { text: "Outdoor Rugs" },
+      ],
+      text: "Outdoor",
+    },
+    {
+      submenu: [
+        { imgSrc: dinningSet, text: "Sofas" },
+        { imgSrc: dinningSet, text: "Coffee Tables" },
+        { imgSrc: dinningSet, text: "TV Stands" },
+        { text: "Accent Chairs" },
+        { text: "Bookcases" },
+      ],
+      text: "Living",
+    },
+    {
+      submenu: [
+        { imgSrc: dinningSet, text: "Dining Tables" },
+        { imgSrc: dinningSet, text: "Dining Chairs" },
+        { imgSrc: dinningSet, text: "Bar Stools" },
+        { text: "Buffets & Sideboards" },
+        { text: "Dining Sets" },
+      ],
+      text: "Dining",
+    },
+    {
+      submenu: [
+        { imgSrc: dinningSet, text: "All Bedroom" },
+        { imgSrc: dinningSet, text: "Beds & Bedframes" },
+        { imgSrc: dinningSet, text: "Nightstands & Bedside Tables" },
+        { text: "Dressers & Chest of Drawers" },
+        { text: "Bedroom Benches" },
+        { text: "Bedding" },
+        { text: "Bedroom Sets" },
+        { text: "Small Bedroom Furniture" },
+        { text: "Bedroom Inspiration" },
+      ],
+      text: "Bedroom",
+    },
+    {
+      submenu: [
+        { imgSrc: dinningSet, text: "Desks" },
+        { imgSrc: dinningSet, text: "Office Chairs" },
+        { imgSrc: dinningSet, text: "Bookcases" },
+        { text: "File Cabinets" },
+        { text: "Office Decor" },
+      ],
+      text: "Office",
+    },
+    {
+      submenu: [
+        { imgSrc: dinningSet, text: "Bathroom Vanities" },
+        { imgSrc: dinningSet, text: "Mirrors" },
+        { imgSrc: dinningSet, text: "Bathroom Storage" },
+        { text: "Shower Curtains" },
+        { text: "Bath Rugs & Mats" },
+      ],
+      text: "Bathroom",
+    },
   ];
 
   return (
@@ -163,12 +236,54 @@ export default function Navbar() {
           {/* list / links */}
           <Box className={styles.list_container}>
             <List component={Stack} direction="row">
-              {menuItems.map((item) => (
-                <ListItem className={styles.list_item} key={item.text}>
+              {menuItems.map((item, index) => (
+                <ListItem
+                  aria-haspopup="true"
+                  className={styles.list_item}
+                  key={item.text}
+                  onMouseEnter={(e) => {
+                    handleMouseEnter(e, index);
+                  }}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <ListItemText className={styles.list_text} disableTypography primary={item.text} />
-                  <ListItemIcon className={styles.list_icon}>
-                    <ExpandMoreIcon />
-                  </ListItemIcon>
+                  {item.submenu.length > 0 && <ExpandMoreIcon className={styles.list_icon} />}
+                  {item.submenu.length > 0 && (
+                    <Menu
+                      MenuListProps={{
+                        onMouseEnter: () => {
+                          setOpenSubmenu(index);
+                        },
+                        onMouseLeave: handleMouseLeave,
+                      }}
+                      anchorEl={anchorEl}
+                      anchorOrigin={{
+                        horizontal: "left",
+                        vertical: "bottom",
+                      }}
+                      onClose={handleMouseLeave}
+                      open={openSubmenu === index}
+                      sx={{
+                        maxHeight: "260px",
+                        width: "100vw",
+                      }}
+                      transformOrigin={{
+                        horizontal: "left",
+                        vertical: "top",
+                      }}
+                    >
+                      <Box className={styles.dropdown_container}>
+                        {item.submenu.map((subItem) => (
+                          <MenuItem key={subItem.text} onClick={handleMouseLeave}>
+                            <Box alignItems="center" display="flex">
+                              <ListItemText>{subItem.text}</ListItemText>
+                              {subItem.imgSrc && <img alt={subItem.text} className={styles.dropdown_image} src={subItem.imgSrc} />}
+                            </Box>
+                          </MenuItem>
+                        ))}
+                      </Box>
+                    </Menu>
+                  )}
                 </ListItem>
               ))}
             </List>
