@@ -47454,12 +47454,13 @@ const SalePage_1 = __importDefault(__webpack_require__(5054));
 __webpack_require__(1899);
 const RouteScrollToTop_1 = __importDefault(__webpack_require__(8420));
 function App() {
+    const basename =  true ? "/Online-Shop" : 0;
     return (React.createElement(React.Fragment, null,
-        React.createElement(react_router_dom_1.BrowserRouter, null,
+        React.createElement(react_router_dom_1.BrowserRouter, { basename: basename },
             React.createElement(RouteScrollToTop_1.default, null),
             React.createElement(Navbar_1.default, null),
             React.createElement(react_router_dom_1.Routes, null,
-                React.createElement(react_router_dom_1.Route, { element: React.createElement(HomePage_1.default, null), index: true }),
+                React.createElement(react_router_dom_1.Route, { element: React.createElement(HomePage_1.default, null), path: "/" }),
                 React.createElement(react_router_dom_1.Route, { element: React.createElement(AboutUsPage_1.default, null), path: "/about-us" }),
                 React.createElement(react_router_dom_1.Route, { element: React.createElement(SalePage_1.default, null), path: "/sale" })),
             React.createElement(ContactUs_1.default, null))));
