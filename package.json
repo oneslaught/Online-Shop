@@ -19,6 +19,7 @@
   "scripts": {
     "start": "webpack serve",
     "build": "rimraf dist && webpack",
+    "deploy": "gh-pages -d dist",
     "build-stats": "build --stats",
     "lint": "eslint ."
   },
