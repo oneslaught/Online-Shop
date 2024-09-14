@@ -10,13 +10,15 @@ import "./styles/app.css";
 import ScrollToTop from "./utils/RouteScrollToTop";
 
 export default function App() {
+  const basename = process.env.NODE_ENV === "production" ? "/Online-Shop" : "/";
+
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <ScrollToTop />
         <Navbar />
         <Routes>
-          <Route element={<HomePage />} index />
+          <Route element={<HomePage />} path="/" />
           <Route element={<AboutUsPage />} path="/about-us" />
           <Route element={<SalePage />} path="/sale" />
         </Routes>
