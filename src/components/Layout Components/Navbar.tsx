@@ -1,5 +1,4 @@
 import CloseIcon from "@mui/icons-material/Close";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
@@ -12,20 +11,16 @@ import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import { motion } from "framer-motion";
-import React, { MouseEvent, useState } from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import dinningSet from "../../assets/Home Page Images/on sale img/dining_table_set.jpg?as=webp";
-import logoIcon from "../../assets/Reusable Images/logo_icon.png?as=webp";
-import logoText from "../../assets/Reusable Images/logo_text.png?as=webp";
+import logoIcon from "../../assets/Other Images/logo_icon.png?as=webp";
+import logoText from "../../assets/Other Images/logo_text.png?as=webp";
 import * as styles from "../../styles/layout styles/navbar.module.css";
 import DisableDefaultDrag from "../../utils/DisableDefaultDrag";
-import SidebarData from "./SIdebarData";
+import SidebarData from "./SidebarData";
 
 export default function Navbar() {
   const location = useLocation();
@@ -39,20 +34,8 @@ export default function Navbar() {
     }
   };
 
-  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-  const [openSubmenu, setOpenSubmenu] = useState<null | number>(null);
-
-  const handleMouseEnter = (event: MouseEvent<HTMLElement>, index: number): void => {
-    setAnchorEl(event.currentTarget);
-    setOpenSubmenu(index);
-  };
-
-  const handleMouseLeave = () => {
-    setAnchorEl(null);
-    setOpenSubmenu(null);
-  };
-
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
+  const [activeMenu, setActiveMenu] = useState<null | string>(null);
   const toggleSubRoutes = (index: number): void => {
     if (activeIndex === index) {
       setActiveIndex(null);
@@ -61,80 +44,21 @@ export default function Navbar() {
     }
   };
 
+  const handleMouseEnter = (menu: string) => {
+    setActiveMenu(menu);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveMenu(null);
+  };
+
   const [sidebar, setSidebar] = useState(false);
   const changeSidebarVisibility = () => {
     setSidebar(!sidebar);
   };
 
+  const filteredData = SidebarData.filter((item) => item.subRoutes);
   const dragRef = DisableDefaultDrag<HTMLDivElement>();
-
-  const menuItems = [
-    {
-      submenu: [
-        { imgSrc: dinningSet, text: "Patio Furniture" },
-        { imgSrc: dinningSet, text: "Outdoor Lighting" },
-        { imgSrc: dinningSet, text: "Garden Decor" },
-        { text: "Grills & Outdoor Cooking" },
-        { text: "Outdoor Rugs" },
-      ],
-      text: "Outdoor",
-    },
-    {
-      submenu: [
-        { imgSrc: dinningSet, text: "Sofas" },
-        { imgSrc: dinningSet, text: "Coffee Tables" },
-        { imgSrc: dinningSet, text: "TV Stands" },
-        { text: "Accent Chairs" },
-        { text: "Bookcases" },
-      ],
-      text: "Living",
-    },
-    {
-      submenu: [
-        { imgSrc: dinningSet, text: "Dining Tables" },
-        { imgSrc: dinningSet, text: "Dining Chairs" },
-        { imgSrc: dinningSet, text: "Bar Stools" },
-        { text: "Buffets & Sideboards" },
-        { text: "Dining Sets" },
-      ],
-      text: "Dining",
-    },
-    {
-      submenu: [
-        { imgSrc: dinningSet, text: "All Bedroom" },
-        { imgSrc: dinningSet, text: "Beds & Bedframes" },
-        { imgSrc: dinningSet, text: "Nightstands & Bedside Tables" },
-        { text: "Dressers & Chest of Drawers" },
-        { text: "Bedroom Benches" },
-        { text: "Bedding" },
-        { text: "Bedroom Sets" },
-        { text: "Small Bedroom Furniture" },
-        { text: "Bedroom Inspiration" },
-      ],
-      text: "Bedroom",
-    },
-    {
-      submenu: [
-        { imgSrc: dinningSet, text: "Desks" },
-        { imgSrc: dinningSet, text: "Office Chairs" },
-        { imgSrc: dinningSet, text: "Bookcases" },
-        { text: "File Cabinets" },
-        { text: "Office Decor" },
-      ],
-      text: "Office",
-    },
-    {
-      submenu: [
-        { imgSrc: dinningSet, text: "Bathroom Vanities" },
-        { imgSrc: dinningSet, text: "Mirrors" },
-        { imgSrc: dinningSet, text: "Bathroom Storage" },
-        { text: "Shower Curtains" },
-        { text: "Bath Rugs & Mats" },
-      ],
-      text: "Bathroom",
-    },
-  ];
-
   return (
     <Box className={styles.navbar_container} ref={dragRef}>
       <AppBar className={styles.navbar}>
@@ -233,61 +157,40 @@ export default function Navbar() {
             <motion.img className={styles.logo_text} onClick={handleHomePageClick} src={logoText} />
           </Box>
 
-          {/* list / links */}
-          <Box className={styles.list_container}>
-            <List component={Stack} direction="row">
-              {menuItems.map((item, index) => (
-                <ListItem
-                  aria-haspopup="true"
-                  className={styles.list_item}
-                  key={item.text}
-                  onMouseEnter={(e) => {
-                    handleMouseEnter(e, index);
-                  }}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <ListItemText className={styles.list_text} disableTypography primary={item.text} />
-                  {item.submenu.length > 0 && <ExpandMoreIcon className={styles.list_icon} />}
-                  {item.submenu.length > 0 && (
-                    <Menu
-                      MenuListProps={{
-                        onMouseEnter: () => {
-                          setOpenSubmenu(index);
-                        },
-                        onMouseLeave: handleMouseLeave,
-                      }}
-                      anchorEl={anchorEl}
-                      anchorOrigin={{
-                        horizontal: "left",
-                        vertical: "bottom",
-                      }}
-                      onClose={handleMouseLeave}
-                      open={openSubmenu === index}
-                      sx={{
-                        maxHeight: "260px",
-                        width: "100vw",
-                      }}
-                      transformOrigin={{
-                        horizontal: "left",
-                        vertical: "top",
-                      }}
-                    >
-                      <Box className={styles.dropdown_container}>
-                        {item.submenu.map((subItem) => (
-                          <MenuItem key={subItem.text} onClick={handleMouseLeave}>
-                            <Box alignItems="center" display="flex">
-                              <ListItemText>{subItem.text}</ListItemText>
-                              {subItem.imgSrc && <img alt={subItem.text} className={styles.dropdown_image} src={subItem.imgSrc} />}
-                            </Box>
-                          </MenuItem>
+          {/* nav links */}
+          <List className={styles.list_container} component="nav" onMouseLeave={handleMouseLeave}>
+            {filteredData.map((item, index) => (
+              <ListItem
+                className={styles.list_item}
+                key={index}
+                onMouseEnter={() => {
+                  handleMouseEnter(item.title);
+                }}
+              >
+                <ListItemText className={styles.list_text} disableTypography primary={item.title} />
+
+                {/* mega menu */}
+                {item.subRoutes && (
+                  <Box className={`${styles.mega_menu} ${activeMenu === item.title ? styles.active : ""}`}>
+                    <Box className={styles.mega_content}>
+                      <p>{item.title}</p>
+                      <ul>
+                        {item.subRoutes.map((subRoute, subIndex) => (
+                          <li key={subIndex}>
+                            <Link to={subRoute.path}>{subRoute.title}</Link>
+                          </li>
                         ))}
-                      </Box>
-                    </Menu>
-                  )}
-                </ListItem>
-              ))}
-            </List>
-          </Box>
+                      </ul>
+                    </Box>
+                    <Box className={styles.mega_images}>
+                      <img alt="First image" className={styles.image} src={item.images[0]} />
+                      <img alt="Second image" className={styles.image} src={item.images[1]} />
+                    </Box>
+                  </Box>
+                )}
+              </ListItem>
+            ))}
+          </List>
 
           {/* icons */}
           <Box className={styles.icons_container}>

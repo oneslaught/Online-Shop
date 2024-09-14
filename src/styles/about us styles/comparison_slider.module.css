@@ -104,9 +104,6 @@
 .nav_arrow_next,
 .nav_icon {
   font-size: 60px !important;
-  transition:
-    color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out !important;
 }
 
 .nav_arrow_before:hover,
@@ -242,7 +239,6 @@
   .nav_arrow_next,
   .nav_icon {
     font-size: 40px !important;
-    transition: none;
   }
 
   .clue_text {
