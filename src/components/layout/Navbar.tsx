@@ -16,9 +16,9 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import logoIcon from "../../assets/Other Images/logo_icon.png?as=webp";
-import logoText from "../../assets/Other Images/logo_text.png?as=webp";
-import * as styles from "../../styles/layout styles/navbar.module.css";
+import logoIcon from "../../assets/other_img/logo_icon.png?as=webp";
+import logoText from "../../assets/other_img/logo_text.png?as=webp";
+import * as styles from "../../styles/layout_styles/navbar.module.css";
 import DisableDefaultDrag from "../../utils/DisableDefaultDrag";
 import SidebarData from "./SidebarData";
 

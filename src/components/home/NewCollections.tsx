@@ -1,9 +1,9 @@
 import React from "react";
 
-import CreamSofa from "../../assets/Home Page Images/new collections img/cream_style_sofa_set.jpg?as=webp";
-import EmperiorSofa from "../../assets/Home Page Images/new collections img/emperior_sofa_set.jpg?as=webp";
-import WoodenTVCabinet from "../../assets/Home Page Images/new collections img/wooden_tv_cabinet_set.jpg?as=webp";
-import * as styles from "../../styles/home styles/new_collections.module.css";
+import CreamSofa from "../../assets/home_img/new_collections/cream_style_sofa_set.jpg?as=webp";
+import EmperiorSofa from "../../assets/home_img/new_collections/emperior_sofa_set.jpg?as=webp";
+import WoodenTVCabinet from "../../assets/home_img/new_collections/wooden_tv_cabinet_set.jpg?as=webp";
+import * as styles from "../../styles/home_styles/new_collections.module.css";
 
 export default function NewCollections() {
   return (

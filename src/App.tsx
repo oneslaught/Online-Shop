@@ -1,11 +1,11 @@
 import * as React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import AboutUsPage from "./components/About Us Page/AboutUsPage";
-import HomePage from "./components/Home Page/HomePage";
-import ContactUs from "./components/Layout Components/ContactUs";
-import Navbar from "./components/Layout Components/Navbar";
-import SalePage from "./components/Sale Page/SalePage";
+import AboutUsPage from "./components/about_us/AboutUsPage";
+import HomePage from "./components/home/HomePage";
+import ContactUs from "./components/layout/ContactUs";
+import Navbar from "./components/layout/Navbar";
+import SalePage from "./components/sale/SalePage";
 import "./styles/app.css";
 import ScrollToTop from "./utils/RouteScrollToTop";
 

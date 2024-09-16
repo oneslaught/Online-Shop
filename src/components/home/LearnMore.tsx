@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import image from "../../assets/Home Page Images/learn more img/about_us.jpg?as=webp";
-import * as styles from "../../styles/home styles/learn_more.module.css";
+import image from "../../assets/home_img/learn_more/about_us.jpg?as=webp";
+import * as styles from "../../styles/home_styles/learn_more.module.css";
 import StringSplitRegex from "../../utils/StringSplitRegex";
 
 const heading = "About Us";

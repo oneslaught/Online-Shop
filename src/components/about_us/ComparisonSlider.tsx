@@ -12,19 +12,19 @@ import TableRestaurantOutlinedIcon from "@mui/icons-material/TableRestaurantOutl
 import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 
-import armrestsOfficeChair from "../../assets/About Us Page Images/comparison slider img/armrests_office_chair.jpg?as=webp";
-import bed from "../../assets/About Us Page Images/comparison slider img/bed.jpg?as=webp";
-import graySofa from "../../assets/About Us Page Images/comparison slider img/biege_sofa.jpg?as=webp";
-import cafeTable from "../../assets/About Us Page Images/comparison slider img/cafe_table.jpg?as=webp";
-import coffeeTable from "../../assets/About Us Page Images/comparison slider img/coffee_table.jpg?as=webp";
-import desk from "../../assets/About Us Page Images/comparison slider img/desk.jpg?as=webp";
-import blackChair from "../../assets/About Us Page Images/comparison slider img/gray_chair.jpg?as=webp";
-import biegeSofa from "../../assets/About Us Page Images/comparison slider img/grey_sofa.jpg?as=webp";
-import officeChair from "../../assets/About Us Page Images/comparison slider img/office_chair.jpg?as=webp";
-import redChair from "../../assets/About Us Page Images/comparison slider img/red_chair.jpg?as=webp";
-import storageBed from "../../assets/About Us Page Images/comparison slider img/storage_bed.jpg?as=webp";
-import storageDesk from "../../assets/About Us Page Images/comparison slider img/storage_desk.jpg?as=webp";
-import * as styles from "../../styles/about us styles/comparison_slider.module.css";
+import armrestsOfficeChair from "../../assets/about_us_img/comparison_slider/armrests_office_chair.jpg?as=webp";
+import bed from "../../assets/about_us_img/comparison_slider/bed.jpg?as=webp";
+import graySofa from "../../assets/about_us_img/comparison_slider/biege_sofa.jpg?as=webp";
+import cafeTable from "../../assets/about_us_img/comparison_slider/cafe_table.jpg?as=webp";
+import coffeeTable from "../../assets/about_us_img/comparison_slider/coffee_table.jpg?as=webp";
+import desk from "../../assets/about_us_img/comparison_slider/desk.jpg?as=webp";
+import blackChair from "../../assets/about_us_img/comparison_slider/gray_chair.jpg?as=webp";
+import biegeSofa from "../../assets/about_us_img/comparison_slider/grey_sofa.jpg?as=webp";
+import officeChair from "../../assets/about_us_img/comparison_slider/office_chair.jpg?as=webp";
+import redChair from "../../assets/about_us_img/comparison_slider/red_chair.jpg?as=webp";
+import storageBed from "../../assets/about_us_img/comparison_slider/storage_bed.jpg?as=webp";
+import storageDesk from "../../assets/about_us_img/comparison_slider/storage_desk.jpg?as=webp";
+import * as styles from "../../styles/about_us_styles/comparison_slider.module.css";
 
 export default function ComparisonSlider() {
   const sliderRef = useRef<Slider>(null);

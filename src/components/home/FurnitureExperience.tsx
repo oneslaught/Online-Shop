@@ -1,9 +1,9 @@
 import React from "react";
 
-import deliveryTruck from "../../assets/Home Page Images/furniture expirience img/delivery_truck.png?as=webp";
-import deliveryPackage from "../../assets/Home Page Images/furniture expirience img/package.png?as=webp";
-import trees from "../../assets/Home Page Images/furniture expirience img/trees.png?as=webp";
-import * as styles from "../../styles/home styles/furniture_expirience.module.css";
+import deliveryTruck from "../../assets/home_img/furniture_expirience/delivery_truck.png?as=webp";
+import deliveryPackage from "../../assets/home_img/furniture_expirience/package.png?as=webp";
+import trees from "../../assets/home_img/furniture_expirience/trees.png?as=webp";
+import * as styles from "../../styles/home_styles/furniture_expirience.module.css";
 
 export default function ProblemsSection() {
   return (

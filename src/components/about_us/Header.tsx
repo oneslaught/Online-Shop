@@ -1,8 +1,8 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 
-import headerImg from "../../assets/About Us Page Images/header img/header.jpg?as=webp";
-import * as styles from "../../styles/about us styles/header.module.css";
+import headerImg from "../../assets/about_us_img/header/header.jpg?as=webp";
+import * as styles from "../../styles/about_us_styles/header.module.css";
 
 export default function Header() {
   const ref = useRef(null);

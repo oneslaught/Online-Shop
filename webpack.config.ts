@@ -16,7 +16,7 @@ const webpackConfig: Configuration = {
     },
   },
   entry: "./src/index.tsx",
-  mode: "production",
+  mode: process.env.NODE_ENV === "production" ? "production" : "development",
   module: {
     rules: [
       {

@@ -9,18 +9,18 @@ import LoyaltyOutlinedIcon from "@mui/icons-material/LoyaltyOutlined";
 import YardOutlinedIcon from "@mui/icons-material/YardOutlined";
 import React from "react";
 
-import bathroomOne from "../../assets/Other Images/sidebar data img/bathroom_one.jpg?as=webp";
-import bathroomTwo from "../../assets/Other Images/sidebar data img/bathroom_two.jpg?as=webp";
-import bedroomOne from "../../assets/Other Images/sidebar data img/bedroom_one.jpg?as=webp";
-import bedroomTwo from "../../assets/Other Images/sidebar data img/bedroom_two.jpg?as=webp";
-import diningOne from "../../assets/Other Images/sidebar data img/dining_one.jpg?as=webp";
-import diningTwo from "../../assets/Other Images/sidebar data img/dining_two.jpg?as=webp";
-import livingOne from "../../assets/Other Images/sidebar data img/living_one.jpg?as=webp";
-import livingTwo from "../../assets/Other Images/sidebar data img/living_two.jpg?as=webp";
-import officeOne from "../../assets/Other Images/sidebar data img/office_one.jpg?as=webp";
-import officeTwo from "../../assets/Other Images/sidebar data img/office_two.jpg?as=webp";
-import outdoorOne from "../../assets/Other Images/sidebar data img/outdoor_one.jpg?as=webp";
-import outdoorTwo from "../../assets/Other Images/sidebar data img/outdoor_two.jpg?as=webp";
+import bathroomOne from "../../assets/other_img/sidebar_data/bathroom_one.jpg?as=webp";
+import bathroomTwo from "../../assets/other_img/sidebar_data/bathroom_two.jpg?as=webp";
+import bedroomOne from "../../assets/other_img/sidebar_data/bedroom_one.jpg?as=webp";
+import bedroomTwo from "../../assets/other_img/sidebar_data/bedroom_two.jpg?as=webp";
+import diningOne from "../../assets/other_img/sidebar_data/dining_one.jpg?as=webp";
+import diningTwo from "../../assets/other_img/sidebar_data/dining_two.jpg?as=webp";
+import livingOne from "../../assets/other_img/sidebar_data/living_one.jpg?as=webp";
+import livingTwo from "../../assets/other_img/sidebar_data/living_two.jpg?as=webp";
+import officeOne from "../../assets/other_img/sidebar_data/office_one.jpg?as=webp";
+import officeTwo from "../../assets/other_img/sidebar_data/office_two.jpg?as=webp";
+import outdoorOne from "../../assets/other_img/sidebar_data/outdoor_one.jpg?as=webp";
+import outdoorTwo from "../../assets/other_img/sidebar_data/outdoor_two.jpg?as=webp";
 
 export const SidebarData = [
   {

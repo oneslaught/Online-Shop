@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import { Link } from "react-router-dom";
 
-import logoIcon from "../../assets/Other Images/logo_icon.png?as=webp";
-import * as styles from "../../styles/layout styles/contact_us.module.css";
+import logoIcon from "../../assets/other_img/logo_icon.png?as=webp";
+import * as styles from "../../styles/layout_styles/contact_us.module.css";
 
 const sections = [
   {

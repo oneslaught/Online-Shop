@@ -102,7 +102,9 @@
 .mega_menu {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out ;
+  transition:
+    opacity 0.4s ease-in-out,
+    visibility 0.4s ease-in-out;
   display: flex;
   position: fixed;
   top: 90px;
@@ -216,6 +218,12 @@
   color: rgb(78 76 74);
 }
 
+/* menu icon visibility */
+
+:global(.css-mgcv3e-MuiButtonBase-root-MuiIconButton-root[aria-label="show more"]) {
+  display: none !important;
+}
+
 .menu_icon,
 .login_icon {
   font-size: 40px !important;
@@ -237,7 +245,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   background-color: #ffffff;
-  width: 350px;
+  width: 400px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -386,8 +394,8 @@
 }
 
 @media (max-width: 1208px) {
-  :global(.css-4phlaq[aria-label="show more"]) {
-    display: inline-block !important;
+  :global(.css-mgcv3e-MuiButtonBase-root-MuiIconButton-root[aria-label="show more"]) {
+    display: block !important;
   }
 
   .toolbar {
@@ -411,6 +419,10 @@
     width: 200px;
   }
 
+  .menu_icon {
+    display: block;
+  }
+
   .toolbar {
     height: 80px;
   }
@@ -431,10 +443,6 @@
   }
 
   .search_label {
-    display: none !important;
-  }
-
-  :global(.css-f172i) {
     display: none !important;
   }
 

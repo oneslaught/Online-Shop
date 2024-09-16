@@ -3,16 +3,16 @@ import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import React from "react";
 
-import bed from "../../assets/Home Page Images/image gallery img/bed.jpeg?as=webp";
-import besideTable from "../../assets/Home Page Images/image gallery img/beside_table.jpg?as=webp";
-import chair from "../../assets/Home Page Images/image gallery img/chair.jpg?as=webp";
-import closet from "../../assets/Home Page Images/image gallery img/closet.jpg?as=webp";
-import fireplace from "../../assets/Home Page Images/image gallery img/fireplace.jpg?as=webp";
-import mirror from "../../assets/Home Page Images/image gallery img/mirror.jpg?as=webp";
-import sofa from "../../assets/Home Page Images/image gallery img/sofa.jpg?as=webp";
-import table from "../../assets/Home Page Images/image gallery img/table.jpg?as=webp";
-import tableLamp from "../../assets/Home Page Images/image gallery img/table_lamp.jpeg?as=webp";
-import * as styles from "../../styles/home styles/image_gallery.module.css";
+import bed from "../../assets/home_img/image_gallery/bed.jpeg?as=webp";
+import besideTable from "../../assets/home_img/image_gallery/beside_table.jpg?as=webp";
+import chair from "../../assets/home_img/image_gallery/chair.jpg?as=webp";
+import closet from "../../assets/home_img/image_gallery/closet.jpg?as=webp";
+import fireplace from "../../assets/home_img/image_gallery/fireplace.jpg?as=webp";
+import mirror from "../../assets/home_img/image_gallery/mirror.jpg?as=webp";
+import sofa from "../../assets/home_img/image_gallery/sofa.jpg?as=webp";
+import table from "../../assets/home_img/image_gallery/table.jpg?as=webp";
+import tableLamp from "../../assets/home_img/image_gallery/table_lamp.jpeg?as=webp";
+import * as styles from "../../styles/home_styles/image_gallery.module.css";
 import ImageGalleryMobile from "./ImageGalleryMobile";
 
 interface GalleryProps {

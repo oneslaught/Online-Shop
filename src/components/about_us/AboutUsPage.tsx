@@ -8,12 +8,12 @@ import JoingUs from "./JoingUs";
 
 export default function AboutUsPage() {
   return (
-    <>
+    <div>
       <Header />
       <ComparisonSlider />
       <FeatureHighlight />
       <GlobalBrand />
       <JoingUs />
-    </>
+    </div>
   );
 }

@@ -5,18 +5,18 @@ import Typography from "@mui/material/Typography";
 import React from "react";
 import Slider from "react-slick";
 
-import diningSet from "../../assets/Home Page Images/on sale img/dining_table_set.jpg?as=webp";
-import nightStand from "../../assets/Home Page Images/on sale img/eily_night_stand.jpg?as=webp";
-import bed from "../../assets/Home Page Images/on sale img/hattie_bed_frame.jpg?as=webp";
-import tvStand from "../../assets/Home Page Images/on sale img/iwell_tv_stand.jpg?as=webp";
-import closet from "../../assets/Home Page Images/on sale img/mahmayi_closet.jpg?as=webp";
-import besideTable from "../../assets/Home Page Images/on sale img/maison_esto_hanging_beside_table.jpg?as=webp";
-import lamp from "../../assets/Home Page Images/on sale img/mushroom_lamp.jpg?as=webp";
-import mirror from "../../assets/Home Page Images/on sale img/neutype_arched_mirror.jpg?as=webp";
-import chairs from "../../assets/Home Page Images/on sale img/saville_dining_chairs.jpeg?as=webp";
-import reclinerChair from "../../assets/Home Page Images/on sale img/soarflash_power_recliner_chair.jpg?as=webp";
-import sofa from "../../assets/Home Page Images/on sale img/sofa_angel.jpg?as=webp";
-import * as styles from "../../styles/home styles/on_sale.module.css";
+import diningSet from "../../assets/home_img/on_sale/dining_table_set.jpg?as=webp";
+import nightStand from "../../assets/home_img/on_sale/eily_night_stand.jpg?as=webp";
+import bed from "../../assets/home_img/on_sale/hattie_bed_frame.jpg?as=webp";
+import tvStand from "../../assets/home_img/on_sale/iwell_tv_stand.jpg?as=webp";
+import closet from "../../assets/home_img/on_sale/mahmayi_closet.jpg?as=webp";
+import besideTable from "../../assets/home_img/on_sale/maison_esto_hanging_beside_table.jpg?as=webp";
+import lamp from "../../assets/home_img/on_sale/mushroom_lamp.jpg?as=webp";
+import mirror from "../../assets/home_img/on_sale/neutype_arched_mirror.jpg?as=webp";
+import chairs from "../../assets/home_img/on_sale/saville_dining_chairs.jpeg?as=webp";
+import reclinerChair from "../../assets/home_img/on_sale/soarflash_power_recliner_chair.jpg?as=webp";
+import sofa from "../../assets/home_img/on_sale/sofa_angel.jpg?as=webp";
+import * as styles from "../../styles/home_styles/on_sale.module.css";
 
 interface Product {
   actualPrice: number;

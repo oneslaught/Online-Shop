@@ -3,13 +3,13 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Box from "@mui/material/Box";
 import React, { useEffect, useState } from "react";
 
-import Bathroom from "../../assets/Home Page Images/slider img/bathroom.jpg?as=webp";
-import Bedroom from "../../assets/Home Page Images/slider img/bedroom.jpg?as=webp";
-import Dining from "../../assets/Home Page Images/slider img/kitchen.jpg?as=webp";
-import Living from "../../assets/Home Page Images/slider img/living_room.jpg?as=webp";
-import Office from "../../assets/Home Page Images/slider img/office.jpeg?as=webp";
-import Outdoor from "../../assets/Home Page Images/slider img/outdoor.jpg?as=webp";
-import * as styles from "../../styles/home styles/slider.module.css";
+import Bathroom from "../../assets/home_img/slider/bathroom.jpg?as=webp";
+import Bedroom from "../../assets/home_img/slider/bedroom.jpg?as=webp";
+import Dining from "../../assets/home_img/slider/kitchen.jpg?as=webp";
+import Living from "../../assets/home_img/slider/living_room.jpg?as=webp";
+import Office from "../../assets/home_img/slider/office.jpeg?as=webp";
+import Outdoor from "../../assets/home_img/slider/outdoor.jpg?as=webp";
+import * as styles from "../../styles/home_styles/slider.module.css";
 
 type Slide = {
   description: string;

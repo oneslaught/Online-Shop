@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-import joingImg from "../../assets/About Us Page Images/joing us img/employees.jpg?as=webp";
-import * as styles from "../../styles/about us styles/joing_us.module.css";
+import joingImg from "../../assets/about_us_img/joing_us/employees.jpg?as=webp";
+import * as styles from "../../styles/about_us_styles/joing_us.module.css";
 
 export default function JoingUs() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import * as styles from "../../styles/about us styles/global_brand.module.css";
+import * as styles from "../../styles/about_us_styles/global_brand.module.css";
 
 export default function GlobalBrand() {
   return (

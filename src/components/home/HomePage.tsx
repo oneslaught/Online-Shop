@@ -8,9 +8,9 @@ import NewCollections from "./NewCollections";
 import OnSale from "./OnSale";
 import Slider from "./Slider";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
+    <div>
       <Slider />
       <OnSale />
       <LearnMore />
@@ -18,6 +18,6 @@ export default function Home() {
       <FurnitureCategories />
       <FurnitureExpirience />
       <ImageGallery />
-    </>
+    </div>
   );
 }
