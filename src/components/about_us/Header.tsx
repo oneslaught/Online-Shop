@@ -27,7 +27,7 @@ export default function Header() {
     <>
       <div className={styles.container}>
         <img className={styles.image} src={headerImg} />
-        <div className={styles.heading_container} ref={ref}>
+        <div ref={ref}>
           <motion.div
             animate={mainControls}
             className={styles.heading}

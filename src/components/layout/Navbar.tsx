@@ -104,7 +104,7 @@ export default function Navbar() {
                       </Link>
                     </li>
                     {isActive && item.subRoutes && (
-                      <ul className={styles.sub_menu}>
+                      <ul>
                         {item.subRoutes.map((subItem, subIndex) => (
                           <motion.li
                             className={styles[subItem.name]}

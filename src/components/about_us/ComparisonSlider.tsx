@@ -91,7 +91,7 @@ export default function ComparisonSlider() {
   return (
     <>
       <div className={styles.nav_container}>
-        <div className={styles.header_container}>
+        <div>
           <h2 className={styles.header}>Your style, Your choices, Your space</h2>
           <p className={styles.des}>Create a space that reflects your individuality. Loxavi is furniture designed especially for You.</p>
         </div>
@@ -118,7 +118,7 @@ export default function ComparisonSlider() {
       <div className={styles.comparison_slider} onContextMenu={hideClue} onMouseDown={hideClue} onTouchStart={hideClue}>
         <Slider {...settings} ref={sliderRef}>
           {images.map((imagePair, index) => (
-            <div className={styles.slider_item} key={index}>
+            <div key={index}>
               <ImgComparisonSlider className={styles.image_container}>
                 <img className={styles.image} slot="first" src={imagePair.first} />
                 <img className={styles.image} slot="second" src={imagePair.second} />

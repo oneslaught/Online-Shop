@@ -35,7 +35,7 @@ const firstImages = [
 ];
 
 const GalleryItem = ({ h, name, src, w }: GalleryProps) => (
-  <Box className={`${styles.gallery_container} ${styles[`w_${w}`]} ${styles[`h_${h}`]}`}>
+  <Box className={`${styles[`w_${w}`]} ${styles[`h_${h}`]}`}>
     <Box className={styles.gallery_item}>
       <Box className={styles.image}>
         <img alt={name} src={src} />

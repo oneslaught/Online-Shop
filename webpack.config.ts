@@ -1,10 +1,15 @@
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ImageMinimizerPlugin from "image-minimizer-webpack-plugin";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import path from "path";
 import { Configuration } from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import "webpack-dev-server";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const webpackConfig: Configuration = {
   devServer: {

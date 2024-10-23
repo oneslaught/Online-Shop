@@ -64,7 +64,7 @@ export default function OnSale() {
     speed: 600,
   };
   return (
-    <Box className={styles.product}>
+    <Box>
       <Typography className={styles.header} variant="h2">
         Dive into a sea of design diversity
       </Typography>

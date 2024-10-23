@@ -7,7 +7,7 @@ import * as styles from "../../styles/home_styles/new_collections.module.css";
 
 export default function NewCollections() {
   return (
-    <div className={styles.container}>
+    <div>
       <h2 className={styles.header}>New Collections</h2>
       <div className={styles.item_container}>
         <div className={styles.item}>

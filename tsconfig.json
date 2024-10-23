@@ -2,11 +2,12 @@
 	"compilerOptions": {
 		"strict": true,
 		"noUncheckedIndexedAccess": true,
-		"module": "NodeNext",
-		"moduleResolution": "nodenext",
+		"module": "ESNext",
+		"moduleResolution": "Node",
 		"lib": ["DOM", "ESNext"],
 		"target": "ESNext",
+		"allowSyntheticDefaultImports": true,
 		"jsx": "react",
-		"plugins": [{ "name": "typescript-plugin-css-modules" }]
-	}
+		"plugins": [{ "name": "typescript-plugin-css-modules" }],
+	},
 }
