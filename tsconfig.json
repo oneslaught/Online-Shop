@@ -7,6 +7,7 @@
 		"lib": ["DOM", "ESNext"],
 		"target": "ESNext",
 		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
 		"jsx": "react",
 		"plugins": [{ "name": "typescript-plugin-css-modules" }],
 	},
