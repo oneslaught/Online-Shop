@@ -39,7 +39,6 @@ export default function NewSlider() {
     return () => {
       clearTimeout(handleNextAuto);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [render]);
 
   const handleNext = () => {

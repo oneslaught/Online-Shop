@@ -20,7 +20,6 @@ export default function Header() {
         console.error("Animation failed:", error);
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isInView]);
 
   return (
