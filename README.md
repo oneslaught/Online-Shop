@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# 🛋️ Online-Shop "Loxavi"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an online furniture store concept built with React and TypeScript. Currently, most of this project consists of various React libraries, such as React Router, React Slick, Framer Motion, Material UI, and so on. "Loxavi" is **❗still in stage of development❗**, though some UI part of it is finished and can be explored - [Homepage](https://oneslaught.github.io/Online-Shop/) and [About Us](https://oneslaught.github.io/Online-Shop/about-us) page.
 
-## Available Scripts
+## 📀 Video
 
-In the project directory, you can run:
+[Loxavi-demo.webm](https://github.com/user-attachments/assets/bae233f6-fc9d-4f16-85e6-3df6d8b6fa7d)
 
-### `npm start`
+## 📦 Technologies used by far
+### Frontend:
+- `React`
+- `TypeScript`
+- `Material UI`
+- `Framer Motion`
+### Development Tools:
+- `Webpack`
+- `VS Code`
+- `Git + GitHub`
+### Deploy:
+- `GitHub Pages`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛒 Early Development Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🏠 Home page
+Here you can see an animated hero slider cycling through furniture categories, an "On Sale" product carousel with discount tags, a "New Collections" showcase, a section highlighting delivery and assembly, and a masonry style image gallery.
 
-### `npm test`
+### 📖 About Us page
+On this page there are an animated header, a drag to compare before and after slider for furniture pieces, scroll triggered feature sections with tilt effects on hover, a brand stats section, and a "Join our team" call to action.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🧭 Navigation
+"Loxavi" has a responsive navbar with a mega menu on desktop and a collapsible sidebar on mobile, both built from a shared category data source covering Outdoor, Living, Dining, Bedroom, Office and Bathroom furniture, each with its own sub categories. Currently have only visual aspect.
 
-### `npm run build`
+### 📂 Footer
+A footer with company, customer care and programs link sections, a newsletter signup form, and social media links. The same situation here as with the Navigation - no actual links, just a mockup.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🌠 Animations
+Online-Shop by far has a variety of animations, some of them are scroll triggered and letter by letter text reveal animations, image reveal transitions and drag interactions are powered by Framer Motion throughout the site.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📜 What I Already Learned
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+While working on this project, I'm gaining new knowledge about creating interactive web pages; here are some of the things I've learned:
 
-### `npm run eject`
+### 🎨 Material UI & Styled Components
+Combining MUI components like `AppBar`, `Box` and `Typography` with CSS Modules and Styled Components taught me how to mix a component library with custom styling without the two getting in each other's way.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🎞️ Framer Motion
+This library gave me insights into the world of stunning animations and pretty much endless possibilities to make your UI elements stand out.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 📱 Responsive Design at the Component Level
+Instead of relying only on CSS breakpoints, the image gallery swaps in an entirely different component, ImageGalleryMobile, once the screen gets narrow, decided in JavaScript with the useMediaQuery hook. Working this way made me realize that sometimes it makes more sense to render a structurally different component for mobile instead of forcing one layout to adapt with CSS alone.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 🎯 Imperative Refs
+Controlling the comparison slider from custom navigation icons outside of it and using sliderRef.current?.slickGoTo(), slickPrev() and slickNext() was my first real use of a ref to reach into a third party component's imperative API rather than just grabbing a DOM node with it.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+*And there is more to come as the project is updated...*
 
-## Learn More
+## 📈 Overall Growth
+This project pushed me to build a much larger, multi page application than anything I had made before, with a real focus on visual polish and animation rather than just functionality (which is yet to come). Working with a component library alongside my own styling, configuring my own build tooling gave me a much better sense of what goes into shipping a production ready frontend project. The DB part with PostgreSQL and Flyway is located in [Online-Shop-Backend](https://github.com/oneslaught/Online-Shop-Backend) repository (of course, also in "in progress" status).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 💡 How this project can be improved?
+- Build out more working pages
+- Add real product detail pages instead of the current placeholder links.
+- Connect the storefront to a backend or API instead of using hardcoded product data.
+- Implement a working shopping cart and checkout flow.
+- Add real authentication behind the Login button.
+- Make the search icon actually search the product catalog.
+- Add automated tests for components and utilities.
