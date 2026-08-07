@@ -65,3 +65,5 @@ This project pushed me to build a much larger, multi page application than anyth
 - Add real authentication behind the Login button.
 - Make the search icon actually search the product catalog.
 - Add automated tests for components and utilities.
+
+<img width="500" height="500" alt="wip" src="https://github.com/user-attachments/assets/3df1c8aa-afe1-46fa-8a5d-9e794c6813f1" />
