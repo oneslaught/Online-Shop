@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 import * as styles from "../../styles/about_us_styles/global_brand.module.css";
 

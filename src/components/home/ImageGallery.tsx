@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import React from "react";
 
 import bed from "../../assets/home_img/image_gallery/bed.jpeg?as=webp";
 import besideTable from "../../assets/home_img/image_gallery/beside_table.jpg?as=webp";

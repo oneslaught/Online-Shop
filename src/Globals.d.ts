@@ -3,6 +3,8 @@ declare module "*.module.css" {
   export = styles;
 }
 
+declare module "*.css";
+
 declare module "*.jpg?as=webp" {
   const content: string;
   export default content;

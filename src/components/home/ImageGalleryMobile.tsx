@@ -1,8 +1,6 @@
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { NextArrow, PrevArrow } from "../layout/SliderArrows";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import React from "react";
 import Slider from "react-slick";
 
 import bed from "../../assets/home_img/m_image_gallery/bed.jpg?as=webp";
@@ -37,8 +35,8 @@ export default function OnSale() {
   const settings = {
     infinite: false,
     initialSlide: 0,
-    nextArrow: <NavigateNextIcon />,
-    prevArrow: <NavigateBeforeIcon />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 808,

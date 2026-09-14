@@ -1,5 +1,4 @@
-import * as React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router";
 
 import AboutUsPage from "./components/about_us/AboutUsPage";
 import HomePage from "./components/home/HomePage";

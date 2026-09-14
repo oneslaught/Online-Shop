@@ -3,8 +3,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import PinterestIcon from "@mui/icons-material/Pinterest";
 import XIcon from "@mui/icons-material/X";
 import { motion } from "framer-motion";
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 import logoIcon from "../../assets/other_img/logo_icon.png?as=webp";
 import * as styles from "../../styles/layout_styles/contact_us.module.css";

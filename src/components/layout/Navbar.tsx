@@ -13,8 +13,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Fragment, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 
 import logoIcon from "../../assets/other_img/logo_icon.png?as=webp";
 import logoText from "../../assets/other_img/logo_text.png?as=webp";
@@ -78,7 +78,7 @@ export default function Navbar() {
                 const isActive = activeIndex === index;
 
                 return (
-                  <React.Fragment key={index}>
+                  <Fragment key={index}>
                     <li
                       className={styles[item.name]}
                       onClick={() => {
@@ -121,7 +121,7 @@ export default function Navbar() {
                         ))}
                       </ul>
                     )}
-                  </React.Fragment>
+                  </Fragment>
                 );
               })}
             </ul>

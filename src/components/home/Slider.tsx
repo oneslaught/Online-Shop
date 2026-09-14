@@ -1,7 +1,7 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Box from "@mui/material/Box";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import Bathroom from "../../assets/home_img/slider/bathroom.jpg?as=webp";
 import Bedroom from "../../assets/home_img/slider/bedroom.jpg?as=webp";

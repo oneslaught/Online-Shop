@@ -1,0 +1,3 @@
+{
+  "reject": ["typescript", "@mui/material", "@mui/icons-material", "@mui/styled-engine-sc"]
+}

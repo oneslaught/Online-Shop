@@ -1,5 +1,3 @@
-import * as React from "react";
-
 import FurnitureCategories from "./FurnitureCategories";
 import FurnitureExpirience from "./FurnitureExperience";
 import ImageGallery from "./ImageGallery";

@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 import image from "../../assets/home_img/learn_more/about_us.jpg?as=webp";
 import * as styles from "../../styles/home_styles/learn_more.module.css";
@@ -43,8 +42,8 @@ export default function LearnMore() {
             viewport={{ once: true }}
             whileInView="reveal"
           >
-            {headingChars.map((char) => (
-              <motion.span key={char} transition={{ duration: 0.5 }} variants={charVariants}>
+            {headingChars.map((char, index) => (
+              <motion.span key={index} transition={{ duration: 0.5 }} variants={charVariants}>
                 {char}
               </motion.span>
             ))}
@@ -56,8 +55,8 @@ export default function LearnMore() {
             viewport={{ once: true }}
             whileInView="reveal"
           >
-            {paragraphChars.map((char) => (
-              <motion.span key={char} transition={{ duration: 0.35 }} variants={charVariants}>
+            {paragraphChars.map((char, index) => (
+              <motion.span key={index} transition={{ duration: 0.35 }} variants={charVariants}>
                 {char}
               </motion.span>
             ))}

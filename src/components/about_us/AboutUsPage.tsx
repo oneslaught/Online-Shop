@@ -1,5 +1,3 @@
-import React from "react";
-
 import ComparisonSlider from "./ComparisonSlider";
 import FeatureHighlight from "./FeatureHighlight";
 import GlobalBrand from "./GlobalBrand";

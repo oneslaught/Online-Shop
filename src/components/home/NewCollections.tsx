@@ -1,5 +1,3 @@
-import React from "react";
-
 import CreamSofa from "../../assets/home_img/new_collections/cream_style_sofa_set.jpg?as=webp";
 import EmperiorSofa from "../../assets/home_img/new_collections/emperior_sofa_set.jpg?as=webp";
 import WoodenTVCabinet from "../../assets/home_img/new_collections/wooden_tv_cabinet_set.jpg?as=webp";

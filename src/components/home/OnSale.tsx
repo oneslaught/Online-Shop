@@ -1,8 +1,6 @@
-import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
-import NavigateNextIcon from "@mui/icons-material/NavigateNext";
+import { NextArrow, PrevArrow } from "../layout/SliderArrows";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import React from "react";
 import Slider from "react-slick";
 
 import diningSet from "../../assets/home_img/on_sale/dining_table_set.jpg?as=webp";
@@ -122,8 +120,8 @@ export default function OnSale() {
   const settings = {
     infinite: false,
     initialSlide: 0,
-    nextArrow: <NavigateNextIcon />,
-    prevArrow: <NavigateBeforeIcon />,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     responsive: [
       {
         breakpoint: 1524,
@@ -186,7 +184,7 @@ export default function OnSale() {
                 <Typography className={styles.product_brand} variant="h4">
                   {product.name}
                 </Typography>
-                <Typography className={styles.product_des} paragraph>
+                <Typography className={styles.product_des} component="p">
                   {product.description}
                 </Typography>
                 <Box className={styles.price} component="span">

@@ -1,5 +1,3 @@
-import React from "react";
-
 import deliveryTruck from "../../assets/home_img/furniture_expirience/delivery_truck.png?as=webp";
 import deliveryPackage from "../../assets/home_img/furniture_expirience/package.png?as=webp";
 import trees from "../../assets/home_img/furniture_expirience/trees.png?as=webp";

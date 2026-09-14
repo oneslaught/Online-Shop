@@ -1,5 +1,3 @@
-import React from "react";
-
 import wallShelf from "../../assets/home_img/furniture_categories/cube_wall_shelf.jpg?as=webp";
 import officeChair from "../../assets/home_img/furniture_categories/office_chair.jpg?as=webp";
 import pouf from "../../assets/home_img/furniture_categories/pouf.jpg?as=webp";

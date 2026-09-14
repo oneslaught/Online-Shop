@@ -9,7 +9,7 @@ import KingBedOutlinedIcon from "@mui/icons-material/KingBedOutlined";
 import NavigateBeforeOutlinedIcon from "@mui/icons-material/NavigateBeforeOutlined";
 import NavigateNextRoundedIcon from "@mui/icons-material/NavigateNextRounded";
 import TableRestaurantOutlinedIcon from "@mui/icons-material/TableRestaurantOutlined";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Slider from "react-slick";
 
 import armrestsOfficeChair from "../../assets/about_us_img/comparison_slider/armrests_office_chair.jpg?as=webp";

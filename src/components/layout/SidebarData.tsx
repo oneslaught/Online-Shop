@@ -7,7 +7,6 @@ import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
 import LivingOutlinedIcon from "@mui/icons-material/LivingOutlined";
 import LoyaltyOutlinedIcon from "@mui/icons-material/LoyaltyOutlined";
 import YardOutlinedIcon from "@mui/icons-material/YardOutlined";
-import React from "react";
 
 import bathroomOne from "../../assets/other_img/sidebar_data/bathroom_one.jpg?as=webp";
 import bathroomTwo from "../../assets/other_img/sidebar_data/bathroom_two.jpg?as=webp";

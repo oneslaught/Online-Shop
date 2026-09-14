@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
-import { Tilt } from "react-tilt";
+import { useEffect, useRef, useState } from "react";
+import Tilt from "react-parallax-tilt";
 
 import cat from "../../assets/about_us_img/feature_highlight/cat.jpg?as=webp";
 import family from "../../assets/about_us_img/feature_highlight/family.jpg?as=webp";
@@ -52,13 +52,6 @@ const charVariants = {
   reveal: { opacity: 1 },
 };
 
-const tiltOptions = {
-  max: 25,
-  perspective: 1200,
-  scale: 1.0,
-  speed: 400,
-};
-
 const ContentBlock = ({ heading, image, paragraph, reverse }: ContentProps) => {
   const headingChars = StringSplitRegex(heading);
   const paragraphChars = StringSplitRegex(paragraph);
@@ -91,7 +84,7 @@ const ContentBlock = ({ heading, image, paragraph, reverse }: ContentProps) => {
 
   return (
     <div className={reverse ? styles.rev_container : styles.container}>
-      <Tilt className={styles.easing_anim} options={tiltOptions}>
+      <Tilt className={styles.easing_anim} perspective={1200} scale={1.0} tiltMaxAngleX={25} tiltMaxAngleY={25} transitionSpeed={400}>
         <section ref={ref}>
           <motion.img
             alt={heading}
@@ -146,8 +139,8 @@ const ContentBlock = ({ heading, image, paragraph, reverse }: ContentProps) => {
                 viewport={{ once: true }}
                 whileInView="reveal"
               >
-                {headingChars.map((char) => (
-                  <motion.span key={char} transition={{ duration: 0.5 }} variants={charVariants}>
+                {headingChars.map((char, index) => (
+                  <motion.span key={index} transition={{ duration: 0.5 }} variants={charVariants}>
                     {char}
                   </motion.span>
                 ))}
@@ -159,8 +152,8 @@ const ContentBlock = ({ heading, image, paragraph, reverse }: ContentProps) => {
                 viewport={{ once: true }}
                 whileInView="reveal"
               >
-                {paragraphChars.map((char) => (
-                  <motion.span key={char} transition={{ duration: 0.35 }} variants={charVariants}>
+                {paragraphChars.map((char, index) => (
+                  <motion.span key={index} transition={{ duration: 0.35 }} variants={charVariants}>
                     {char}
                   </motion.span>
                 ))}

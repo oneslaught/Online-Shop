@@ -4,12 +4,14 @@ import ImageMinimizerPlugin from "image-minimizer-webpack-plugin";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import path from "path";
-import { Configuration } from "webpack";
+import type { Configuration } from "webpack";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import "webpack-dev-server";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+const isProduction = process.env.NODE_ENV === "production";
 
 const webpackConfig: Configuration = {
   devServer: {
@@ -21,7 +23,7 @@ const webpackConfig: Configuration = {
     },
   },
   entry: "./src/index.tsx",
-  mode: "production",
+  mode: isProduction ? "production" : "development",
   module: {
     rules: [
       {
@@ -65,7 +67,7 @@ const webpackConfig: Configuration = {
   },
   optimization: {
     minimizer: [
-      new ImageMinimizerPlugin({
+      new ImageMinimizerPlugin<Record<string, unknown>>({
         generator: [
           {
             implementation: ImageMinimizerPlugin.imageminGenerate,
